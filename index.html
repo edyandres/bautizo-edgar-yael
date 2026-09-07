@@ -1,0 +1,4504 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+<title>Bautizo de Edgar Yael</title>
+
+<style>
+
+/* =====================================================
+   COLORES
+===================================================== */
+
+:root {
+    --azul: #5b9bd1;
+    --azul-claro: #dcefff;
+    --azul-muy-claro: #f4faff;
+    --azul-oscuro: #244c6c;
+    --azul-profundo: #183b56;
+    --blanco: #ffffff;
+    --crema: #fffdf8;
+    --texto: #29465d;
+}
+
+
+/* =====================================================
+   GENERAL
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--texto);
+    background: var(--crema);
+    overflow-x: hidden;
+}
+
+body.sobre-activo {
+    overflow: hidden;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+section {
+    position: relative;
+}
+
+
+/* =====================================================
+   PANTALLA DEL SOBRE
+===================================================== */
+
+.pantalla-sobre {
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 20000;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px 20px;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 50% 40%,
+            #ffffff 0%,
+            #f5fbff 42%,
+            #dcefff 100%
+        );
+
+    transition:
+        opacity 0.8s ease,
+        visibility 0.8s ease;
+}
+
+.pantalla-sobre.oculta {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+
+/* =====================================================
+   DECORACIÓN DEL SOBRE
+===================================================== */
+
+.sobre-esquina {
+    position: absolute;
+
+    width:
+        clamp(
+            190px,
+            24vw,
+            380px
+        );
+
+    pointer-events: none;
+    user-select: none;
+
+    z-index: 1;
+}
+
+.sobre-esquina-izquierda {
+    left: -40px;
+    top: -25px;
+}
+
+.sobre-esquina-derecha {
+    right: -40px;
+    top: -25px;
+}
+
+
+/* =====================================================
+   CONTENIDO APERTURA
+===================================================== */
+
+.apertura-contenido {
+    position: relative;
+
+    z-index: 4;
+
+    width: 100%;
+    max-width: 850px;
+
+    text-align: center;
+}
+
+.apertura-mini {
+    margin-bottom: 15px;
+
+    color: var(--azul);
+
+    font-size: 13px;
+    font-weight: 700;
+
+    letter-spacing: 6px;
+}
+
+.apertura-titulo {
+    margin-bottom: 30px;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        clamp(
+            40px,
+            6vw,
+            70px
+        );
+
+    font-weight: 400;
+
+    color: var(--azul-oscuro);
+}
+
+
+/* =====================================================
+   SOBRE
+===================================================== */
+
+.sobre-wrapper {
+    position: relative;
+
+    width:
+        min(
+            620px,
+            92vw
+        );
+
+    height:
+        min(
+            410px,
+            61vw
+        );
+
+    min-height: 300px;
+    max-height: 410px;
+
+    margin: 0 auto 25px;
+
+    perspective: 1400px;
+}
+
+.sobre {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    filter:
+        drop-shadow(
+            0 28px 35px
+            rgba(36, 76, 108, 0.20)
+        );
+}
+
+
+/* =====================================================
+   SOBRE ATRÁS
+===================================================== */
+
+.sobre-atras {
+    position: absolute;
+
+    inset: 0;
+
+    border-radius:
+        12px 12px 18px 18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #d9efff,
+            #f8fcff
+        );
+
+    border:
+        2px solid
+        rgba(91, 155, 209, 0.25);
+
+    overflow: hidden;
+
+    z-index: 1;
+}
+
+
+/* =====================================================
+   TARJETA INTERIOR
+===================================================== */
+
+.tarjeta-sobre {
+    position: absolute;
+
+    left: 8%;
+    bottom: 7%;
+
+    width: 84%;
+    height: 82%;
+
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 25px;
+
+    border-radius: 15px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #ffffff,
+            #f7fcff
+        );
+
+    border:
+        1px solid
+        rgba(91,155,209,0.22);
+
+    transform:
+        translateY(14%);
+
+    transition:
+        transform 1.1s
+        cubic-bezier(
+            0.22,
+            0.8,
+            0.25,
+            1
+        );
+
+    box-shadow:
+        0 12px 28px
+        rgba(36, 76, 108, 0.08);
+}
+
+.tarjeta-adorno {
+    width:
+        min(
+            260px,
+            60%
+        );
+
+    margin-bottom: 12px;
+}
+
+.tarjeta-mini {
+    color: var(--azul);
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 5px;
+
+    margin-bottom: 10px;
+}
+
+.tarjeta-sobre h2 {
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        clamp(
+            31px,
+            5vw,
+            50px
+        );
+
+    line-height: 1;
+
+    font-weight: 400;
+
+    color: var(--azul-oscuro);
+
+    margin-bottom: 13px;
+}
+
+.tarjeta-fecha {
+    color: var(--azul-oscuro);
+
+    font-size: 11px;
+
+    letter-spacing: 4px;
+}
+
+
+/* =====================================================
+   TAPA DEL SOBRE
+===================================================== */
+
+.sobre-tapa {
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    width: 100%;
+    height: 55%;
+
+    z-index: 5;
+
+    transform-origin: center top;
+
+    transform:
+        rotateX(0deg);
+
+    transition:
+        transform 0.9s
+        cubic-bezier(
+            0.65,
+            0,
+            0.35,
+            1
+        );
+
+    clip-path:
+        polygon(
+            0 0,
+            100% 0,
+            50% 100%
+        );
+
+    background:
+        linear-gradient(
+            160deg,
+            #e9f6ff,
+            #cce9ff
+        );
+
+    border-top:
+        2px solid
+        rgba(91,155,209,0.22);
+
+    backface-visibility: hidden;
+}
+
+
+/* =====================================================
+   FRENTE DEL SOBRE
+===================================================== */
+
+.sobre-frente-izq {
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 55%;
+    height: 72%;
+
+    z-index: 4;
+
+    clip-path:
+        polygon(
+            0 0,
+            100% 65%,
+            100% 100%,
+            0 100%
+        );
+
+    background:
+        linear-gradient(
+            135deg,
+            #eef9ff,
+            #cdeaff
+        );
+}
+
+.sobre-frente-der {
+    position: absolute;
+
+    right: 0;
+    bottom: 0;
+
+    width: 55%;
+    height: 72%;
+
+    z-index: 4;
+
+    clip-path:
+        polygon(
+            100% 0,
+            0 65%,
+            0 100%,
+            100% 100%
+        );
+
+    background:
+        linear-gradient(
+            225deg,
+            #eef9ff,
+            #cdeaff
+        );
+}
+
+.sobre-frente-abajo {
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 52%;
+
+    z-index: 4;
+
+    clip-path:
+        polygon(
+            0 100%,
+            50% 0,
+            100% 100%
+        );
+
+    background:
+        linear-gradient(
+            180deg,
+            #eef9ff,
+            #d5edff
+        );
+}
+
+
+/* =====================================================
+   SELLO PARA TI
+===================================================== */
+
+.sello {
+    position: absolute;
+
+    left: 50%;
+    top: 47%;
+
+    transform:
+        translate(-50%, -50%);
+
+    z-index: 8;
+
+    width: 92px;
+    height: 92px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+
+    background:
+        var(--azul-oscuro);
+
+    color: #ffffff;
+
+    border:
+        6px solid
+        rgba(255,255,255,0.88);
+
+    box-shadow:
+        0 8px 20px
+        rgba(36,76,108,0.22);
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 19px;
+
+    font-style: italic;
+
+    line-height: 1.05;
+
+    text-align: center;
+
+    transition:
+        opacity 0.35s ease,
+        transform 0.5s ease;
+}
+
+
+/* =====================================================
+   SOBRE ABIERTO
+===================================================== */
+
+.pantalla-sobre.abriendo
+.sobre-tapa {
+    transform:
+        rotateX(-180deg);
+
+    z-index: 0;
+}
+
+.pantalla-sobre.abriendo
+.tarjeta-sobre {
+    transform:
+        translateY(-42%);
+}
+
+.pantalla-sobre.abriendo
+.sello {
+    opacity: 0;
+
+    transform:
+        translate(-50%, -50%)
+        scale(0.6);
+}
+
+
+/* =====================================================
+   BOTÓN ABRIR
+===================================================== */
+
+.boton-abrir {
+    min-width: 230px;
+
+    padding:
+        17px 30px;
+
+    border: 0;
+
+    border-radius: 50px;
+
+    color: #ffffff;
+
+    background:
+        var(--azul-oscuro);
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 13px 30px
+        rgba(36,76,108,0.22);
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+.boton-abrir:hover {
+    transform:
+        translateY(-3px);
+
+    background:
+        #326789;
+}
+
+.apertura-nota {
+    margin-top: 14px;
+
+    font-size: 12px;
+
+    opacity: 0.6;
+}
+
+
+/* =====================================================
+   PORTADA
+===================================================== */
+
+.portada {
+    height: 100vh;
+    min-height: 700px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    padding:
+        65px
+        45px
+        45px;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 63% 45%,
+            #ffffff 0%,
+            #f7fbff 42%,
+            #e5f4fe 100%
+        );
+}
+
+
+/* =====================================================
+   ESQUINAS PORTADA
+===================================================== */
+
+.esquina-portada {
+    position: absolute;
+
+    top: -15px;
+
+    width:
+        clamp(
+            270px,
+            27vw,
+            440px
+        );
+
+    z-index: 5;
+
+    pointer-events: none;
+
+    user-select: none;
+}
+
+.esquina-portada-izquierda {
+    left: -25px;
+}
+
+.esquina-portada-derecha {
+    right: -25px;
+}
+
+
+/* =====================================================
+   DECORACIÓN FONDO PORTADA
+===================================================== */
+
+.portada::before {
+    content: "";
+
+    position: absolute;
+
+    width: 620px;
+    height: 620px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid
+        rgba(91,155,209,0.10);
+
+    left: -310px;
+    bottom: -310px;
+}
+
+.portada::after {
+    content: "";
+
+    position: absolute;
+
+    width: 480px;
+    height: 480px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid
+        rgba(91,155,209,0.08);
+
+    right: -230px;
+    top: 150px;
+}
+
+
+/* =====================================================
+   CONTENIDO PORTADA
+===================================================== */
+
+.portada-contenido {
+    width: 100%;
+    max-width: 1280px;
+
+    position: relative;
+
+    z-index: 3;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0,0.9fr)
+        minmax(420px,1.1fr);
+
+    align-items: center;
+
+    gap:
+        clamp(
+            45px,
+            7vw,
+            110px
+        );
+}
+
+
+/* =====================================================
+   TEXTO PORTADA
+===================================================== */
+
+.portada-texto {
+    text-align: left;
+
+    position: relative;
+
+    z-index: 6;
+
+    padding-top: 55px;
+}
+
+.portada-mini {
+    font-size:
+        clamp(
+            20px,
+            1.65vw,
+            25px
+        );
+
+    font-weight: 700;
+
+    letter-spacing: 5px;
+
+    color: var(--azul);
+
+    margin-bottom: 22px;
+}
+
+.portada h1 {
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        clamp(
+            68px,
+            7vw,
+            102px
+        );
+
+    font-weight: 400;
+
+    line-height: 0.88;
+
+    color:
+        var(--azul-oscuro);
+
+    margin-bottom: 30px;
+}
+
+.portada-subtitulo {
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        clamp(
+            27px,
+            2.7vw,
+            38px
+        );
+
+    font-style: italic;
+
+    color: var(--azul);
+
+    margin-bottom: 25px;
+}
+
+.portada-fecha {
+    font-size: 15px;
+
+    font-weight: 500;
+
+    letter-spacing: 5px;
+
+    color:
+        var(--azul-oscuro);
+
+    margin-bottom: 27px;
+}
+
+.portada-mensaje {
+    max-width: 530px;
+
+    font-size: 18px;
+
+    line-height: 1.75;
+
+    opacity: 0.78;
+}
+
+.divisor-portada {
+    width: 180px;
+
+    margin-top: 27px;
+}
+
+
+/* =====================================================
+   FOTO PORTADA
+===================================================== */
+
+.foto-portada-area {
+    position: relative;
+
+    width: 100%;
+
+    height:
+        min(
+            67vh,
+            610px
+        );
+
+    min-height: 500px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    isolation: isolate;
+}
+
+.foto-edgar {
+    position: absolute;
+
+    left: 50%;
+    top: 56%;
+
+    transform:
+        translate(-50%,-50%);
+
+    width:
+        min(
+            395px,
+            70%
+        );
+
+    height:
+        min(
+            545px,
+            89%
+        );
+
+    object-fit: cover;
+
+    object-position:
+        center center;
+
+    z-index: 1;
+
+    border-radius: 8px;
+
+    box-shadow:
+        0 22px 55px
+        rgba(36,76,108,0.10);
+}
+
+.marco-foto {
+    position: relative;
+
+    width:
+        min(
+            510px,
+            92%
+        );
+
+    z-index: 3;
+
+    pointer-events: none;
+
+    filter:
+        drop-shadow(
+            0 18px 22px
+            rgba(36,76,108,0.08)
+        );
+}
+
+
+/* =====================================================
+   INTRO
+===================================================== */
+
+.intro {
+    min-height: 90vh;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: flex-start;
+
+    padding:
+        18px
+        25px
+        85px;
+
+    text-align: center;
+
+    background: #ffffff;
+
+    overflow: hidden;
+}
+
+.intro-contenido {
+    width: 100%;
+
+    max-width: 900px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+.intro-adorno {
+    width:
+        min(
+            560px,
+            85vw
+        );
+
+    margin:
+        0 auto
+        18px;
+}
+
+.mini {
+    font-size: 12px;
+
+    font-weight: 500;
+
+    letter-spacing: 6px;
+
+    color: var(--azul);
+
+    margin-bottom: 25px;
+}
+
+.intro h2 {
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        clamp(
+            48px,
+            7vw,
+            82px
+        );
+
+    font-weight: 400;
+
+    line-height: 1.08;
+
+    color:
+        var(--azul-oscuro);
+
+    margin-bottom: 35px;
+}
+
+.intro-texto {
+    max-width: 650px;
+
+    margin: auto;
+
+    font-size: 18px;
+
+    line-height: 1.9;
+
+    opacity: 0.72;
+}
+
+.divisor {
+    width: 190px;
+
+    margin:
+        40px
+        auto
+        0;
+}
+
+
+/* =====================================================
+   CONTADOR
+===================================================== */
+
+.contador-seccion {
+    min-height: 85vh;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: flex-start;
+
+    text-align: center;
+
+    padding:
+        20px
+        25px
+        85px;
+
+    color: #ffffff;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            145deg,
+            #1d4766,
+            #3978a2,
+            #70acd4
+        );
+}
+
+.contador-contenido {
+    width: 100%;
+
+    max-width: 950px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+.adorno-contador {
+    width:
+        min(
+            600px,
+            80vw
+        );
+
+    margin:
+        0 auto
+        18px;
+}
+
+.contador-mini {
+    font-size: 12px;
+
+    font-weight: 500;
+
+    letter-spacing: 7px;
+
+    opacity: 0.8;
+
+    margin-bottom: 20px;
+}
+
+.contador-seccion h2 {
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        clamp(
+            45px,
+            7vw,
+            75px
+        );
+
+    font-weight: 400;
+
+    margin-bottom: 60px;
+}
+
+.contador {
+    display: flex;
+
+    justify-content: center;
+
+    gap:
+        clamp(
+            15px,
+            5vw,
+            70px
+        );
+}
+
+.contador-item {
+    min-width: 100px;
+}
+
+.contador span {
+    display: block;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        clamp(
+            48px,
+            8vw,
+            85px
+        );
+}
+
+.contador small {
+    display: block;
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    margin-top: 10px;
+
+    opacity: 0.7;
+}
+
+
+/* =====================================================
+   MOMENTO
+===================================================== */
+
+.momento {
+    padding:
+        70px
+        7%
+        95px;
+
+    background:
+        var(--azul-muy-claro);
+
+    overflow: hidden;
+}
+
+.momento-grid {
+    width: 100%;
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        1fr;
+
+    align-items: center;
+
+    gap: 90px;
+}
+
+.momento-foto img.foto {
+    width: 100%;
+
+    height: 680px;
+
+    object-fit: cover;
+
+    border-radius:
+        220px
+        220px
+        30px
+        30px;
+
+    box-shadow:
+        0 25px 70px
+        rgba(36,76,108,0.13);
+}
+
+.momento-texto {
+    text-align: left;
+}
+
+.ornamento-talavera {
+    width:
+        min(
+            430px,
+            80%
+        );
+
+    margin-bottom: 22px;
+}
+
+.momento-texto h2 {
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        clamp(
+            50px,
+            6vw,
+            78px
+        );
+
+    font-weight: 400;
+
+    line-height: 1.05;
+
+    color:
+        var(--azul-oscuro);
+
+    margin-bottom: 35px;
+}
+
+.momento-texto p.texto {
+    max-width: 520px;
+
+    font-size: 18px;
+
+    line-height: 1.9;
+
+    opacity: 0.72;
+}
+
+
+/* =====================================================
+   CEREMONIA
+===================================================== */
+
+.ceremonia {
+    padding:
+        25px
+        7%
+        90px;
+
+    background: #ffffff;
+
+    overflow: hidden;
+}
+
+.encabezado {
+    max-width: 800px;
+
+    margin:
+        0 auto
+        50px;
+
+    text-align: center;
+}
+
+.simbolo-cielito {
+    width:
+        min(
+            330px,
+            65vw
+        );
+
+    margin:
+        0 auto
+        15px;
+}
+
+.encabezado h2 {
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        clamp(
+            50px,
+            7vw,
+            82px
+        );
+
+    font-weight: 400;
+
+    color:
+        var(--azul-oscuro);
+}
+
+
+/* =====================================================
+   EVENTOS
+===================================================== */
+
+.eventos {
+    max-width: 1150px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        1fr;
+
+    gap: 30px;
+}
+
+.evento {
+    min-height: 610px;
+
+    border-radius: 35px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #f8fcff,
+            #e9f6ff
+        );
+
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+
+    box-shadow:
+        0 20px 55px
+        rgba(36,76,108,0.08);
+}
+
+.evento-foto {
+    width: 100%;
+
+    height: 245px;
+
+    overflow: hidden;
+}
+
+.evento-foto img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.8s ease;
+}
+
+.evento:hover
+.evento-foto img {
+    transform:
+        scale(1.035);
+}
+
+.evento-contenido {
+    flex: 1;
+
+    padding:
+        38px
+        45px
+        45px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+}
+
+.evento-tipo {
+    font-size: 11px;
+
+    font-weight: 600;
+
+    letter-spacing: 5px;
+
+    color: var(--azul);
+
+    margin-bottom: 18px;
+}
+
+.evento h3 {
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        clamp(
+            35px,
+            4vw,
+            52px
+        );
+
+    font-weight: 400;
+
+    line-height: 1.1;
+
+    color:
+        var(--azul-oscuro);
+
+    margin-bottom: 20px;
+}
+
+.evento-hora {
+    font-size: 23px;
+
+    color: var(--azul);
+
+    margin-bottom: 12px;
+}
+
+.evento-direccion {
+    font-size: 16px;
+
+    line-height: 1.7;
+
+    opacity: 0.68;
+
+    margin-bottom: 30px;
+}
+
+.boton {
+    display: inline-block;
+
+    padding:
+        17px
+        27px;
+
+    border:
+        1px solid
+        var(--azul-oscuro);
+
+    border-radius: 50px;
+
+    color:
+        var(--azul-oscuro);
+
+    text-decoration: none;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    transition:
+        0.3s ease;
+}
+
+.boton:hover {
+    color: #ffffff;
+
+    background:
+        var(--azul-oscuro);
+
+    transform:
+        translateY(-2px);
+}
+
+
+/* =====================================================
+   PADRINOS
+===================================================== */
+
+.padrinos {
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: flex-start;
+
+    padding:
+        20px
+        25px
+        85px;
+
+    text-align: center;
+
+    color: #ffffff;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            145deg,
+            #183b56,
+            #275c7d,
+            #5596c1
+        );
+}
+
+.padrinos-contenido {
+    width: 100%;
+
+    max-width: 900px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+.guirnalda-padrinos {
+    width:
+        min(
+            650px,
+            90vw
+        );
+
+    margin:
+        0 auto
+        18px;
+}
+
+.padrinos .mini {
+    color: #ffffff;
+
+    opacity: 0.8;
+}
+
+.padrinos h2 {
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        clamp(
+            55px,
+            8vw,
+            90px
+        );
+
+    font-weight: 400;
+
+    margin-bottom: 50px;
+}
+
+.nombre-padrino {
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        clamp(
+            40px,
+            6vw,
+            70px
+        );
+}
+
+.ampersand {
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 35px;
+
+    font-style: italic;
+
+    opacity: 0.55;
+
+    margin:
+        22px
+        0;
+}
+
+.padrinos-linea {
+    width: 80px;
+    height: 1px;
+
+    margin:
+        50px
+        auto
+        35px;
+
+    background:
+        rgba(255,255,255,0.4);
+}
+
+.padrinos-mensaje {
+    max-width: 600px;
+
+    margin: auto;
+
+    font-size: 17px;
+
+    line-height: 1.9;
+
+    opacity: 0.75;
+}
+
+
+/* =====================================================
+   GALERÍA
+===================================================== */
+
+.galeria {
+    padding:
+        60px
+        7%
+        95px;
+
+    background: #f5fbff;
+}
+
+.galeria-grid {
+    width: 100%;
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        1.35fr
+        1fr
+        1fr;
+
+    grid-template-rows:
+        320px
+        320px;
+
+    gap: 16px;
+}
+
+.foto-galeria {
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 28px;
+
+    box-shadow:
+        0 15px 45px
+        rgba(36,76,108,0.10);
+}
+
+.foto-galeria img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.8s ease;
+}
+
+.foto-galeria:hover img {
+    transform:
+        scale(1.04);
+}
+
+.galeria-1 {
+    grid-row:
+        1 / 3;
+}
+
+.galeria-4 {
+    grid-column:
+        2 / 4;
+}
+
+.galeria-frase {
+    max-width: 650px;
+
+    margin:
+        65px
+        auto
+        0;
+
+    text-align: center;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 22px;
+
+    line-height: 1.7;
+
+    color:
+        var(--azul-oscuro);
+}
+
+
+/* =====================================================
+   CONFIRMACIÓN
+===================================================== */
+
+.confirmacion {
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: flex-start;
+
+    padding:
+        20px
+        25px
+        85px;
+
+    text-align: center;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            180deg,
+            #ffffff,
+            #e4f4ff
+        );
+}
+
+.confirmacion-contenido {
+    width: 100%;
+
+    max-width: 760px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+.adorno-osito {
+    width:
+        min(
+            500px,
+            82vw
+        );
+
+    margin:
+        0 auto
+        18px;
+}
+
+.confirmacion h2 {
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        clamp(
+            55px,
+            8vw,
+            90px
+        );
+
+    font-weight: 400;
+
+    color:
+        var(--azul-oscuro);
+
+    margin-bottom: 30px;
+}
+
+.confirmacion-texto {
+    font-size: 18px;
+
+    line-height: 1.9;
+
+    opacity: 0.72;
+
+    margin-bottom: 35px;
+}
+
+
+/* =====================================================
+   FORMULARIO
+===================================================== */
+
+.confirmacion-formulario {
+    width: 100%;
+
+    max-width: 510px;
+
+    margin:
+        0 auto
+        30px;
+
+    display: grid;
+
+    gap: 18px;
+}
+
+.campo-grupo {
+    width: 100%;
+
+    text-align: left;
+}
+
+.campo-label {
+    display: block;
+
+    margin:
+        0
+        0
+        9px
+        4px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    letter-spacing: 1.5px;
+
+    color:
+        var(--azul-oscuro);
+}
+
+.confirmacion-campo {
+    width: 100%;
+
+    padding:
+        18px
+        20px;
+
+    border:
+        1px solid
+        rgba(36,76,108,0.20);
+
+    border-radius: 16px;
+
+    outline: none;
+
+    background:
+        rgba(255,255,255,0.92);
+
+    color:
+        var(--azul-oscuro);
+
+    font-size: 16px;
+}
+
+.confirmacion-campo:focus {
+    border-color:
+        var(--azul);
+
+    box-shadow:
+        0 8px 25px
+        rgba(91,155,209,0.16);
+}
+
+.error-formulario {
+    display: none;
+
+    padding:
+        13px
+        18px;
+
+    border-radius: 13px;
+
+    background:
+        rgba(91,155,209,0.12);
+
+    color:
+        var(--azul-oscuro);
+
+    font-size: 14px;
+}
+
+.error-formulario.visible {
+    display: block;
+}
+
+.boton-whatsapp {
+    width: 100%;
+
+    padding:
+        20px
+        34px;
+
+    border: 0;
+
+    border-radius: 60px;
+
+    color: #ffffff;
+
+    background:
+        var(--azul-oscuro);
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+    cursor: pointer;
+}
+
+.confirmacion-nota {
+    margin-top: 22px;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+
+    opacity: 0.5;
+}
+
+
+/* =====================================================
+   CIERRE
+===================================================== */
+
+.cierre {
+    min-height: 90vh;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: flex-start;
+
+    text-align: center;
+
+    padding:
+        25px
+        25px
+        85px;
+
+    color: #ffffff;
+
+    overflow: hidden;
+
+    background:
+        var(--azul-profundo);
+}
+
+.cierre-contenido {
+    width: 100%;
+
+    max-width: 800px;
+}
+
+.simbolo-cierre {
+    width: 280px;
+
+    margin:
+        0 auto
+        20px;
+}
+
+.cierre .mini {
+    color: #ffffff;
+}
+
+.cierre h2 {
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        clamp(
+            55px,
+            9vw,
+            100px
+        );
+
+    font-weight: 400;
+
+    margin-bottom: 25px;
+}
+
+.cierre-fecha {
+    font-size: 12px;
+
+    letter-spacing: 5px;
+
+    margin-bottom: 30px;
+
+    opacity: 0.75;
+}
+
+.cierre-texto {
+    font-size: 17px;
+
+    line-height: 1.8;
+
+    opacity: 0.7;
+}
+
+
+/* =====================================================
+   MÚSICA
+===================================================== */
+
+.musica-aviso {
+    position: fixed;
+
+    right: 22px;
+    bottom: 95px;
+
+    max-width: 220px;
+
+    padding:
+        13px
+        17px;
+
+    border-radius: 15px;
+
+    background:
+        rgba(255,255,255,0.96);
+
+    color:
+        var(--azul-oscuro);
+
+    font-size: 12px;
+
+    text-align: center;
+
+    z-index: 9998;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition:
+        opacity 0.5s ease;
+}
+
+.musica-aviso.visible {
+    opacity: 1;
+}
+
+.boton-musica {
+    position: fixed;
+
+    right: 22px;
+    bottom: 22px;
+
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    border: 0;
+
+    border-radius: 50%;
+
+    color: #ffffff;
+
+    background:
+        var(--azul-oscuro);
+
+    font-size: 21px;
+
+    cursor: pointer;
+
+    z-index: 9999;
+
+    box-shadow:
+        0 12px 30px
+        rgba(0,0,0,0.18);
+}
+
+.boton-musica.activo {
+    animation:
+        musicaPulso
+        2s infinite;
+}
+
+@keyframes musicaPulso {
+
+    0% {
+        box-shadow:
+            0 0 0 0
+            rgba(91,155,209,0.5);
+    }
+
+    70% {
+        box-shadow:
+            0 0 0 15px
+            rgba(91,155,209,0);
+    }
+
+    100% {
+        box-shadow:
+            0 0 0 0
+            rgba(91,155,209,0);
+    }
+}
+
+
+/* =====================================================
+   ANIMACIONES
+===================================================== */
+
+.revelar {
+    opacity: 0;
+
+    transform:
+        translateY(45px);
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+}
+
+.revelar.visible {
+    opacity: 1;
+
+    transform:
+        translateY(0);
+}
+
+.izquierda {
+    opacity: 0;
+
+    transform:
+        translateX(-50px);
+
+    transition:
+        opacity 1.1s ease,
+        transform 1.1s ease;
+}
+
+.izquierda.visible {
+    opacity: 1;
+
+    transform:
+        translateX(0);
+}
+
+.derecha {
+    opacity: 0;
+
+    transform:
+        translateX(50px);
+
+    transition:
+        opacity 1.1s ease,
+        transform 1.1s ease;
+}
+
+.derecha.visible {
+    opacity: 1;
+
+    transform:
+        translateX(0);
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media
+(max-width:1050px)
+and
+(min-width:801px) {
+
+    .foto-portada-area {
+        height: 560px;
+    }
+
+    .marco-foto {
+        width: 470px;
+    }
+
+    .foto-edgar {
+        width: 345px;
+
+        height: 495px;
+
+        top: 56%;
+    }
+
+}
+
+
+/* =====================================================
+   CELULAR
+===================================================== */
+
+@media
+(max-width:800px) {
+
+
+    /* SOBRE */
+
+    .pantalla-sobre {
+        padding:
+            20px
+            15px;
+    }
+
+    .sobre-esquina {
+        width: 180px;
+    }
+
+    .sobre-esquina-izquierda {
+        left: -65px;
+    }
+
+    .sobre-esquina-derecha {
+        right: -65px;
+    }
+
+    .apertura-mini {
+        font-size: 10px;
+
+        letter-spacing: 4px;
+    }
+
+    .apertura-titulo {
+        font-size: 40px;
+
+        margin-bottom: 20px;
+    }
+
+    .sobre-wrapper {
+        width:
+            min(
+                430px,
+                94vw
+            );
+
+        height: 300px;
+
+        min-height: 0;
+    }
+
+    .tarjeta-sobre {
+        padding: 18px;
+    }
+
+    .tarjeta-adorno {
+        width: 180px;
+
+        margin-bottom: 8px;
+    }
+
+    .tarjeta-sobre h2 {
+        font-size: 32px;
+    }
+
+    .sello {
+        width: 76px;
+
+        height: 76px;
+
+        font-size: 16px;
+    }
+
+    .pantalla-sobre.abriendo
+    .tarjeta-sobre {
+        transform:
+            translateY(-36%);
+    }
+
+
+    /* PORTADA */
+
+    .portada {
+        height: auto;
+
+        min-height: 100svh;
+
+        padding:
+            125px
+            18px
+            55px;
+
+        align-items:
+            flex-start;
+    }
+
+    .esquina-portada {
+        width: 180px;
+
+        top: -5px;
+    }
+
+    .esquina-portada-izquierda {
+        left: -65px;
+    }
+
+    .esquina-portada-derecha {
+        right: -65px;
+    }
+
+    .portada-contenido {
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 28px;
+    }
+
+    .portada-texto {
+        order: 1;
+
+        text-align: center;
+
+        padding-top: 20px;
+    }
+
+    .portada-mini {
+        font-size: 17px;
+
+        letter-spacing: 4px;
+
+        margin-bottom: 18px;
+    }
+
+    .portada h1 {
+        font-size:
+            clamp(
+                59px,
+                18vw,
+                75px
+            );
+    }
+
+    .portada-subtitulo {
+        font-size: 25px;
+    }
+
+    .portada-fecha {
+        font-size: 12px;
+    }
+
+    .portada-mensaje {
+        max-width: 360px;
+
+        margin: auto;
+
+        font-size: 16px;
+    }
+
+    .divisor-portada {
+        width: 145px;
+
+        margin:
+            22px
+            auto
+            0;
+    }
+
+    .foto-portada-area {
+        order: 2;
+
+        height: auto;
+
+        min-height: 0;
+
+        aspect-ratio: 0.84;
+    }
+
+    .marco-foto {
+        position: absolute;
+
+        width:
+            min(
+                390px,
+                96%
+            );
+
+        left: 50%;
+        top: 50%;
+
+        transform:
+            translate(-50%,-50%);
+    }
+
+    .foto-edgar {
+        width: 70%;
+
+        height: 86%;
+
+        left: 50%;
+        top: 56%;
+
+        transform:
+            translate(-50%,-50%);
+    }
+
+
+    /* INTRO */
+
+    .intro {
+        min-height: auto;
+
+        padding:
+            12px
+            20px
+            70px;
+    }
+
+    .intro-adorno {
+        width: 310px;
+    }
+
+    .intro h2 {
+        font-size: 46px;
+    }
+
+    .intro-texto {
+        font-size: 16px;
+    }
+
+
+    /* CONTADOR */
+
+    .contador-seccion {
+        min-height: auto;
+
+        padding:
+            15px
+            15px
+            70px;
+    }
+
+    .adorno-contador {
+        width: 330px;
+    }
+
+    .contador-seccion h2 {
+        font-size: 43px;
+
+        margin-bottom: 50px;
+    }
+
+    .contador {
+        width: 100%;
+
+        gap: 3px;
+    }
+
+    .contador-item {
+        flex: 1;
+
+        min-width: 0;
+    }
+
+    .contador span {
+        font-size: 40px;
+    }
+
+    .contador small {
+        font-size: 7px;
+
+        letter-spacing: 1px;
+    }
+
+
+    /* MOMENTO */
+
+    .momento {
+        padding:
+            55px
+            20px
+            80px;
+    }
+
+    .momento-grid {
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+    }
+
+    .momento-foto img.foto {
+        height: 540px;
+
+        border-radius:
+            150px
+            150px
+            25px
+            25px;
+    }
+
+    .momento-texto {
+        text-align: center;
+    }
+
+    .ornamento-talavera {
+        width: 330px;
+
+        margin:
+            0
+            auto
+            18px;
+    }
+
+    .momento-texto h2 {
+        font-size: 46px;
+    }
+
+
+    /* CEREMONIA */
+
+    .ceremonia {
+        padding:
+            15px
+            20px
+            70px;
+    }
+
+    .encabezado h2 {
+        font-size: 48px;
+    }
+
+    .eventos {
+        grid-template-columns: 1fr;
+    }
+
+    .evento {
+        min-height: 0;
+    }
+
+    .evento-foto {
+        height: 220px;
+    }
+
+    .evento-contenido {
+        padding:
+            30px
+            28px
+            35px;
+    }
+
+
+    /* PADRINOS */
+
+    .padrinos {
+        min-height: auto;
+
+        padding:
+            15px
+            20px
+            70px;
+    }
+
+    .guirnalda-padrinos {
+        width: 360px;
+    }
+
+    .padrinos h2 {
+        font-size: 53px;
+    }
+
+    .nombre-padrino {
+        font-size: 38px;
+    }
+
+
+    /* GALERÍA */
+
+    .galeria {
+        padding:
+            50px
+            16px
+            80px;
+    }
+
+    .galeria-grid {
+        grid-template-columns:
+            1fr
+            1fr;
+
+        grid-template-rows:
+            430px
+            210px
+            290px;
+
+        gap: 10px;
+    }
+
+    .galeria-1 {
+        grid-column:
+            1 / 3;
+
+        grid-row: 1;
+    }
+
+    .galeria-2 {
+        grid-column: 1;
+
+        grid-row: 2;
+    }
+
+    .galeria-3 {
+        grid-column: 2;
+
+        grid-row: 2;
+    }
+
+    .galeria-4 {
+        grid-column:
+            1 / 3;
+
+        grid-row: 3;
+    }
+
+
+    /* CONFIRMACION */
+
+    .confirmacion {
+        min-height: auto;
+
+        padding:
+            15px
+            20px
+            70px;
+    }
+
+    .adorno-osito {
+        width: 340px;
+    }
+
+    .confirmacion h2 {
+        font-size: 53px;
+    }
+
+    .confirmacion-texto {
+        font-size: 16px;
+    }
+
+
+    /* CIERRE */
+
+    .cierre {
+        min-height: auto;
+
+        padding:
+            20px
+            20px
+            70px;
+    }
+
+    .simbolo-cierre {
+        width: 230px;
+    }
+
+    .cierre h2 {
+        font-size: 58px;
+    }
+
+
+    /* MUSICA */
+
+    .boton-musica {
+        width: 52px;
+        height: 52px;
+
+        right: 16px;
+        bottom: 16px;
+    }
+
+}
+
+
+/* =====================================================
+   CELULARES PEQUEÑOS
+===================================================== */
+
+@media
+(max-width:420px) {
+
+    .apertura-titulo {
+        font-size: 34px;
+    }
+
+    .sobre-wrapper {
+        height: 275px;
+    }
+
+    .portada {
+        padding-top: 110px;
+    }
+
+    .portada h1 {
+        font-size: 60px;
+    }
+
+    .portada-mini {
+        font-size: 16px;
+    }
+
+    .marco-foto {
+        width: 96%;
+    }
+
+    .foto-edgar {
+        width: 70%;
+
+        height: 86%;
+
+        top: 56%;
+    }
+
+}
+
+
+/* =====================================================
+   MOVIMIENTO REDUCIDO
+===================================================== */
+
+@media
+(prefers-reduced-motion:reduce) {
+
+    * {
+        scroll-behavior:
+            auto !important;
+    }
+
+    .revelar,
+    .izquierda,
+    .derecha {
+        opacity: 1;
+
+        transform: none;
+
+        transition: none;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body class="sobre-activo">
+
+
+<!-- =====================================================
+     SOBRE
+===================================================== -->
+
+<div
+    id="pantallaSobre"
+    class="pantalla-sobre">
+
+
+    <img
+        class="sobre-esquina sobre-esquina-izquierda"
+        src="imagenes/decoracion/esquina-izquierda.png"
+        alt="">
+
+
+    <img
+        class="sobre-esquina sobre-esquina-derecha"
+        src="imagenes/decoracion/esquina-derecha.png"
+        alt="">
+
+
+    <div class="apertura-contenido">
+
+
+        <p class="apertura-mini">
+            UNA INVITACIÓN MUY ESPECIAL
+        </p>
+
+
+        <h1 class="apertura-titulo">
+            Bautizo de Edgar Yael
+        </h1>
+
+
+        <div class="sobre-wrapper">
+
+
+            <div class="sobre">
+
+
+                <div class="sobre-atras">
+                </div>
+
+
+                <div class="tarjeta-sobre">
+
+
+                    <img
+                        class="tarjeta-adorno"
+                        src="imagenes/decoracion/guirnalda-cielito-lindo.png"
+                        alt="">
+
+
+                    <p class="tarjeta-mini">
+                        MI BAUTIZO
+                    </p>
+
+
+                    <h2>
+                        Edgar Yael
+                    </h2>
+
+
+                    <p class="tarjeta-fecha">
+                        17 · OCTUBRE · 2026
+                    </p>
+
+
+                </div>
+
+
+                <div class="sobre-tapa">
+                </div>
+
+
+                <div class="sobre-frente-izq">
+                </div>
+
+
+                <div class="sobre-frente-der">
+                </div>
+
+
+                <div class="sobre-frente-abajo">
+                </div>
+
+
+                <div class="sello">
+                    Para ti
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+        <button
+            id="abrirInvitacion"
+            class="boton-abrir"
+            type="button">
+
+            ABRIR INVITACIÓN
+
+        </button>
+
+
+        <p class="apertura-nota">
+            Toca para descubrir nuestra invitación
+        </p>
+
+
+    </div>
+
+
+</div>
+
+
+
+<!-- =====================================================
+     MÚSICA
+===================================================== -->
+
+<audio
+    id="musica"
+    src="musica/que-bonito-amor.mp3"
+    preload="auto">
+</audio>
+
+
+<div
+    id="avisoMusica"
+    class="musica-aviso">
+
+    Música
+
+</div>
+
+
+<button
+    id="botonMusica"
+    class="boton-musica"
+    type="button"
+    aria-label="Reproducir música">
+
+    ♪
+
+</button>
+
+
+
+<!-- =====================================================
+     PORTADA
+===================================================== -->
+
+<section class="portada">
+
+
+    <img
+        class="esquina-portada esquina-portada-izquierda"
+        src="imagenes/decoracion/esquina-izquierda.png"
+        alt="">
+
+
+    <img
+        class="esquina-portada esquina-portada-derecha"
+        src="imagenes/decoracion/esquina-derecha.png"
+        alt="">
+
+
+    <div class="portada-contenido">
+
+
+        <div class="portada-texto">
+
+
+            <p class="portada-mini">
+                MI BAUTIZO
+            </p>
+
+
+            <h1>
+                Edgar<br>
+                Yael
+            </h1>
+
+
+            <p class="portada-subtitulo">
+                Un regalo del cielo
+            </p>
+
+
+            <p class="portada-fecha">
+                17 · OCTUBRE · 2026
+            </p>
+
+
+            <p class="portada-mensaje">
+
+                Con mucha alegría queremos invitarte
+                a celebrar el bautizo de nuestro pequeño
+                Edgar Yael junto a nuestra familia.
+
+            </p>
+
+
+            <img
+                class="divisor-portada"
+                src="imagenes/decoracion/divisor.png"
+                alt="">
+
+
+        </div>
+
+
+        <div class="foto-portada-area">
+
+
+            <img
+                class="foto-edgar"
+                src="imagenes/edgar.jpg"
+                alt="Edgar Yael">
+
+
+            <img
+                class="marco-foto"
+                src="imagenes/decoracion/marco-foto.png"
+                alt="">
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     INTRO
+===================================================== -->
+
+<section class="intro">
+
+
+    <div class="intro-contenido revelar">
+
+
+        <img
+            class="intro-adorno"
+            src="imagenes/decoracion/guirnalda-cielito-lindo.png"
+            alt="">
+
+
+        <p class="mini">
+            UN DÍA PARA RECORDAR
+        </p>
+
+
+        <h2>
+
+            Hay momentos<br>
+            que el corazón<br>
+            guarda para siempre
+
+        </h2>
+
+
+        <p class="intro-texto">
+
+            Queremos compartir contigo
+            la alegría de celebrar
+            el bautizo de nuestro pequeño
+            Edgar Yael.
+
+            <br><br>
+
+            Tu compañía hará
+            este día todavía más especial.
+
+        </p>
+
+
+        <img
+            class="divisor"
+            src="imagenes/decoracion/divisor.png"
+            alt="">
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     CONTADOR
+===================================================== -->
+
+<section class="contador-seccion">
+
+
+    <div class="contador-contenido revelar">
+
+
+        <img
+            class="adorno-contador"
+            src="imagenes/decoracion/adorno-contador.png"
+            alt="">
+
+
+        <p class="contador-mini">
+            FALTA MUY POCO
+        </p>
+
+
+        <h2>
+            Para celebrar juntos
+        </h2>
+
+
+        <div class="contador">
+
+
+            <div class="contador-item">
+
+                <span id="dias">
+                    00
+                </span>
+
+                <small>
+                    DÍAS
+                </small>
+
+            </div>
+
+
+            <div class="contador-item">
+
+                <span id="horas">
+                    00
+                </span>
+
+                <small>
+                    HORAS
+                </small>
+
+            </div>
+
+
+            <div class="contador-item">
+
+                <span id="minutos">
+                    00
+                </span>
+
+                <small>
+                    MIN
+                </small>
+
+            </div>
+
+
+            <div class="contador-item">
+
+                <span id="segundos">
+                    00
+                </span>
+
+                <small>
+                    SEG
+                </small>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     MOMENTO
+===================================================== -->
+
+<section class="momento">
+
+
+    <div class="momento-grid">
+
+
+        <div class="momento-foto izquierda">
+
+
+            <img
+                class="foto"
+                src="imagenes/galeria1.jpg"
+                alt="Edgar Yael">
+
+
+        </div>
+
+
+        <div class="momento-texto derecha">
+
+
+            <img
+                class="ornamento-talavera"
+                src="imagenes/decoracion/ornamento-talavera.png"
+                alt="">
+
+
+            <p class="mini">
+                CIELITO LINDO
+            </p>
+
+
+            <h2>
+
+                Nuestro pequeño<br>
+                regalo del cielo
+
+            </h2>
+
+
+            <p class="texto">
+
+                Cada sonrisa,
+                cada mirada
+                y cada pequeño momento
+                se ha convertido
+                en una parte maravillosa
+                de nuestra historia.
+
+                <br><br>
+
+                Hoy queremos celebrar
+                junto a las personas
+                que queremos
+                un día lleno de amor,
+                familia y recuerdos.
+
+            </p>
+
+
+            <img
+                class="divisor"
+                src="imagenes/decoracion/divisor.png"
+                alt="">
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     DÓNDE Y CUÁNDO
+===================================================== -->
+
+<section class="ceremonia">
+
+
+    <div class="encabezado revelar">
+
+
+        <img
+            class="simbolo-cielito"
+            src="imagenes/decoracion/simbolo-bautizo-cielito.png"
+            alt="">
+
+
+        <p class="mini">
+            ACOMPÁÑANOS
+        </p>
+
+
+        <h2>
+            ¿Dónde y cuándo?
+        </h2>
+
+
+    </div>
+
+
+    <div class="eventos">
+
+
+        <article class="evento izquierda">
+
+
+            <div class="evento-foto">
+
+
+                <img
+                    src="imagenes/iglesia.jpg"
+                    alt="Parroquia Santa Clara de Asís">
+
+
+            </div>
+
+
+            <div class="evento-contenido">
+
+
+                <div>
+
+
+                    <p class="evento-tipo">
+                        CEREMONIA RELIGIOSA
+                    </p>
+
+
+                    <h3>
+
+                        Parroquia<br>
+                        Santa Clara de Asís
+
+                    </h3>
+
+
+                    <p class="evento-hora">
+                        10:00 a. m.
+                    </p>
+
+
+                    <p class="evento-direccion">
+
+                        Lerma de Villada<br>
+                        Estado de México
+
+                    </p>
+
+
+                </div>
+
+
+                <a
+                    class="boton"
+                    href="https://maps.app.goo.gl/kbDkYJBMHEsJxY1f8"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    VER UBICACIÓN →
+
+                </a>
+
+
+            </div>
+
+
+        </article>
+
+
+        <article class="evento derecha">
+
+
+            <div class="evento-foto">
+
+
+                <img
+                    src="imagenes/finca.jpg"
+                    alt="Finca Don Miguel">
+
+
+            </div>
+
+
+            <div class="evento-contenido">
+
+
+                <div>
+
+
+                    <p class="evento-tipo">
+                        CELEBRACIÓN
+                    </p>
+
+
+                    <h3>
+                        Finca Don Miguel
+                    </h3>
+
+
+                    <p class="evento-hora">
+                        2:00 p. m.
+                    </p>
+
+
+                    <p class="evento-direccion">
+
+                        Te esperamos para continuar<br>
+                        celebrando juntos.
+
+                    </p>
+
+
+                </div>
+
+
+                <a
+                    class="boton"
+                    href="https://maps.app.goo.gl/8YQ6Rt83bAygNoAK7"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    VER UBICACIÓN →
+
+                </a>
+
+
+            </div>
+
+
+        </article>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     PADRINOS
+===================================================== -->
+
+<section class="padrinos">
+
+
+    <div class="padrinos-contenido revelar">
+
+
+        <img
+            class="guirnalda-padrinos"
+            src="imagenes/decoracion/adorno-celebracion-cielito.png"
+            alt="">
+
+
+        <p class="mini">
+            PERSONAS MUY ESPECIALES
+        </p>
+
+
+        <h2>
+            Mis padrinos
+        </h2>
+
+
+        <p class="nombre-padrino">
+            Cristian Segura
+        </p>
+
+
+        <p class="ampersand">
+            &
+        </p>
+
+
+        <p class="nombre-padrino">
+            Jaqueline González
+        </p>
+
+
+        <div class="padrinos-linea">
+        </div>
+
+
+        <p class="padrinos-mensaje">
+
+            Gracias por acompañarme
+            en este día tan especial
+            y formar parte de un momento
+            que recordaremos siempre.
+
+        </p>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     GALERÍA
+===================================================== -->
+
+<section class="galeria">
+
+
+    <div class="encabezado revelar">
+
+
+        <p class="mini">
+            MOMENTOS ESPECIALES
+        </p>
+
+
+        <h2>
+            Pequeños recuerdos
+        </h2>
+
+
+    </div>
+
+
+    <div class="galeria-grid">
+
+
+        <div class="foto-galeria galeria-1 izquierda">
+
+            <img
+                src="imagenes/galeria1.jpg"
+                alt="Edgar Yael">
+
+        </div>
+
+
+        <div class="foto-galeria galeria-2 revelar">
+
+            <img
+                src="imagenes/galeria2.jpg"
+                alt="Edgar Yael">
+
+        </div>
+
+
+        <div class="foto-galeria galeria-3 derecha">
+
+            <img
+                src="imagenes/galeria3.jpg"
+                alt="Edgar Yael">
+
+        </div>
+
+
+        <div class="foto-galeria galeria-4 revelar">
+
+            <img
+                src="imagenes/galeria4.jpg"
+                alt="Edgar Yael">
+
+        </div>
+
+
+    </div>
+
+
+    <p class="galeria-frase revelar">
+
+        Una vida pequeñita
+        puede llenar de amor
+        un mundo entero.
+
+    </p>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     CONFIRMACIÓN
+===================================================== -->
+
+<section class="confirmacion">
+
+
+    <div class="confirmacion-contenido revelar">
+
+
+        <img
+            class="adorno-osito"
+            src="imagenes/decoracion/adorno-osito-cielito.png"
+            alt="">
+
+
+        <p class="mini">
+            CONFIRMACIÓN DE ASISTENCIA
+        </p>
+
+
+        <h2>
+            ¿Nos acompañan?
+        </h2>
+
+
+        <p class="confirmacion-texto">
+
+            Nos dará mucha alegría
+            compartir este día con ustedes.
+
+            <br><br>
+
+            Escriban el nombre de su familia
+            y el número de personas
+            que nos acompañarán.
+
+        </p>
+
+
+        <form
+            id="formConfirmacion"
+            class="confirmacion-formulario"
+            novalidate>
+
+
+            <div class="campo-grupo">
+
+
+                <label
+                    class="campo-label"
+                    for="familiaInvitada">
+
+                    NOMBRE DE LA FAMILIA
+
+                </label>
+
+
+                <input
+                    type="text"
+                    id="familiaInvitada"
+                    class="confirmacion-campo"
+                    placeholder="Ej. Familia Segura Correa"
+                    autocomplete="off">
+
+
+            </div>
+
+
+            <div class="campo-grupo">
+
+
+                <label
+                    class="campo-label"
+                    for="numeroInvitados">
+
+                    NÚMERO DE INVITADOS
+
+                </label>
+
+
+                <input
+                    type="number"
+                    id="numeroInvitados"
+                    class="confirmacion-campo"
+                    placeholder="Ej. 4"
+                    min="1"
+                    max="20"
+                    step="1"
+                    inputmode="numeric">
+
+
+            </div>
+
+
+            <div
+                id="errorConfirmacion"
+                class="error-formulario">
+            </div>
+
+
+            <button
+                type="submit"
+                class="boton-whatsapp">
+
+                CONFIRMAR POR WHATSAPP
+
+            </button>
+
+
+        </form>
+
+
+        <p class="confirmacion-nota">
+
+            Al tocar el botón se abrirá WhatsApp
+            con los datos de su familia
+            listos para enviar.
+
+        </p>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     CIERRE
+===================================================== -->
+
+<section class="cierre">
+
+
+    <div class="cierre-contenido revelar">
+
+
+        <img
+            class="simbolo-cierre"
+            src="imagenes/decoracion/simbolo-bautizo-cielito.png"
+            alt="">
+
+
+        <p class="mini">
+            GRACIAS POR SER PARTE DE ESTE DÍA
+        </p>
+
+
+        <h2>
+            Edgar Yael
+        </h2>
+
+
+        <p class="cierre-fecha">
+            17 · OCTUBRE · 2026
+        </p>
+
+
+        <p class="cierre-texto">
+
+            Esperamos compartir contigo
+            este momento tan especial.
+
+        </p>
+
+
+    </div>
+
+
+</section>
+
+
+
+<script>
+
+
+/* =====================================================
+   MÚSICA
+===================================================== */
+
+const musica =
+    document.getElementById(
+        "musica"
+    );
+
+
+const botonMusica =
+    document.getElementById(
+        "botonMusica"
+    );
+
+
+const avisoMusica =
+    document.getElementById(
+        "avisoMusica"
+    );
+
+
+musica.volume = 0.4;
+
+
+let musicaActiva = false;
+
+
+/*
+   La primera vez debe iniciar
+   en el segundo 18.
+*/
+
+let primeraReproduccion = true;
+
+
+/* =====================================================
+   SOBRE
+===================================================== */
+
+const pantallaSobre =
+    document.getElementById(
+        "pantallaSobre"
+    );
+
+
+const abrirInvitacion =
+    document.getElementById(
+        "abrirInvitacion"
+    );
+
+
+let sobreAbierto = false;
+
+
+abrirInvitacion.addEventListener(
+    "click",
+    async function() {
+
+
+        if (sobreAbierto) {
+
+            return;
+
+        }
+
+
+        sobreAbierto = true;
+
+
+        abrirInvitacion.disabled = true;
+
+
+        pantallaSobre
+            .classList
+            .add(
+                "abriendo"
+            );
+
+
+        /*
+           INICIAMOS EN EL SEGUNDO 18
+           SOLAMENTE LA PRIMERA VEZ.
+        */
+
+
+        try {
+
+
+            musica.currentTime = 18;
+
+
+            await musica.play();
+
+
+            primeraReproduccion = false;
+
+
+            musicaActiva = true;
+
+
+            botonMusica.textContent =
+                "Ⅱ";
+
+
+            botonMusica
+                .classList
+                .add(
+                    "activo"
+                );
+
+
+            botonMusica
+                .setAttribute(
+                    "aria-label",
+                    "Pausar música"
+                );
+
+
+        }
+
+        catch (error) {
+
+
+            musicaActiva = false;
+
+
+            botonMusica.textContent =
+                "♪";
+
+
+            botonMusica
+                .classList
+                .remove(
+                    "activo"
+                );
+
+
+            botonMusica
+                .setAttribute(
+                    "aria-label",
+                    "Reproducir música"
+                );
+
+
+        }
+
+
+        /*
+           Dejamos que se vea
+           la animación del sobre
+           antes de mostrar
+           la invitación.
+        */
+
+
+        setTimeout(
+            function() {
+
+
+                pantallaSobre
+                    .classList
+                    .add(
+                        "oculta"
+                    );
+
+
+                document.body
+                    .classList
+                    .remove(
+                        "sobre-activo"
+                    );
+
+
+                window.scrollTo(
+                    0,
+                    0
+                );
+
+
+            },
+
+            1550
+        );
+
+
+    }
+);
+
+
+/* =====================================================
+   BOTÓN MÚSICA
+===================================================== */
+
+botonMusica.addEventListener(
+    "click",
+    async function() {
+
+
+        if (!musicaActiva) {
+
+
+            try {
+
+
+                /*
+                   Si por alguna razón
+                   la música no arrancó
+                   al abrir el sobre,
+                   este primer PLAY
+                   también iniciará
+                   desde el segundo 18.
+                */
+
+
+                if (
+                    primeraReproduccion
+                    &&
+                    musica.currentTime < 18
+                ) {
+
+                    musica.currentTime = 18;
+
+                }
+
+
+                await musica.play();
+
+
+                primeraReproduccion = false;
+
+
+                musicaActiva = true;
+
+
+                botonMusica.textContent =
+                    "Ⅱ";
+
+
+                botonMusica
+                    .classList
+                    .add(
+                        "activo"
+                    );
+
+
+                botonMusica
+                    .setAttribute(
+                        "aria-label",
+                        "Pausar música"
+                    );
+
+
+            }
+
+            catch (error) {
+
+
+                console.log(
+                    "No se pudo iniciar la música.",
+                    error
+                );
+
+
+            }
+
+
+        }
+
+        else {
+
+
+            musica.pause();
+
+
+            musicaActiva = false;
+
+
+            botonMusica.textContent =
+                "♪";
+
+
+            botonMusica
+                .classList
+                .remove(
+                    "activo"
+                );
+
+
+            botonMusica
+                .setAttribute(
+                    "aria-label",
+                    "Reproducir música"
+                );
+
+
+        }
+
+
+    }
+);
+
+
+/* =====================================================
+   CUENTA REGRESIVA
+===================================================== */
+
+const fechaBautizo =
+    new Date(
+        "2026-10-17T10:00:00"
+    );
+
+
+function actualizarContador() {
+
+
+    const ahora =
+        new Date();
+
+
+    const diferencia =
+        fechaBautizo - ahora;
+
+
+    if (diferencia <= 0) {
+
+
+        document
+            .getElementById("dias")
+            .textContent =
+            "00";
+
+
+        document
+            .getElementById("horas")
+            .textContent =
+            "00";
+
+
+        document
+            .getElementById("minutos")
+            .textContent =
+            "00";
+
+
+        document
+            .getElementById("segundos")
+            .textContent =
+            "00";
+
+
+        return;
+
+
+    }
+
+
+    const dias =
+        Math.floor(
+            diferencia /
+            (1000 * 60 * 60 * 24)
+        );
+
+
+    const horas =
+        Math.floor(
+            (
+                diferencia /
+                (1000 * 60 * 60)
+            ) % 24
+        );
+
+
+    const minutos =
+        Math.floor(
+            (
+                diferencia /
+                (1000 * 60)
+            ) % 60
+        );
+
+
+    const segundos =
+        Math.floor(
+            (
+                diferencia /
+                1000
+            ) % 60
+        );
+
+
+    document
+        .getElementById("dias")
+        .textContent =
+        String(dias)
+            .padStart(
+                2,
+                "0"
+            );
+
+
+    document
+        .getElementById("horas")
+        .textContent =
+        String(horas)
+            .padStart(
+                2,
+                "0"
+            );
+
+
+    document
+        .getElementById("minutos")
+        .textContent =
+        String(minutos)
+            .padStart(
+                2,
+                "0"
+            );
+
+
+    document
+        .getElementById("segundos")
+        .textContent =
+        String(segundos)
+            .padStart(
+                2,
+                "0"
+            );
+
+
+}
+
+
+actualizarContador();
+
+
+setInterval(
+    actualizarContador,
+    1000
+);
+
+
+/* =====================================================
+   WHATSAPP
+===================================================== */
+
+const formulario =
+    document.getElementById(
+        "formConfirmacion"
+    );
+
+
+const campoFamilia =
+    document.getElementById(
+        "familiaInvitada"
+    );
+
+
+const campoInvitados =
+    document.getElementById(
+        "numeroInvitados"
+    );
+
+
+const errorConfirmacion =
+    document.getElementById(
+        "errorConfirmacion"
+    );
+
+
+function mostrarError(
+    mensaje,
+    campo
+) {
+
+
+    errorConfirmacion
+        .textContent =
+        mensaje;
+
+
+    errorConfirmacion
+        .classList
+        .add(
+            "visible"
+        );
+
+
+    if (campo) {
+
+        campo.focus();
+
+    }
+
+
+}
+
+
+function limpiarError() {
+
+
+    errorConfirmacion
+        .textContent =
+        "";
+
+
+    errorConfirmacion
+        .classList
+        .remove(
+            "visible"
+        );
+
+
+}
+
+
+formulario.addEventListener(
+    "submit",
+    function(evento) {
+
+
+        evento.preventDefault();
+
+
+        limpiarError();
+
+
+        const familia =
+            campoFamilia
+                .value
+                .trim();
+
+
+        const valorInvitados =
+            campoInvitados
+                .value
+                .trim();
+
+
+        const invitados =
+            Number(
+                valorInvitados
+            );
+
+
+        if (!familia) {
+
+
+            mostrarError(
+                "Por favor escribe el nombre de la familia. Ejemplo: Familia Segura Correa.",
+                campoFamilia
+            );
+
+
+            return;
+
+
+        }
+
+
+        if (familia.length < 3) {
+
+
+            mostrarError(
+                "Por favor escribe el nombre completo de la familia.",
+                campoFamilia
+            );
+
+
+            return;
+
+
+        }
+
+
+        if (!valorInvitados) {
+
+
+            mostrarError(
+                "Por favor indica cuántas personas asistirán.",
+                campoInvitados
+            );
+
+
+            return;
+
+
+        }
+
+
+        if (
+            !Number.isInteger(invitados)
+            ||
+            invitados < 1
+        ) {
+
+
+            mostrarError(
+                "El número de invitados debe ser un número entero mayor a cero.",
+                campoInvitados
+            );
+
+
+            return;
+
+
+        }
+
+
+        if (invitados > 20) {
+
+
+            mostrarError(
+                "Por favor revisa el número de invitados ingresado.",
+                campoInvitados
+            );
+
+
+            return;
+
+
+        }
+
+
+        const textoInvitados =
+            invitados === 1
+                ?
+                "invitado"
+                :
+                "invitados";
+
+
+        const mensaje =
+`Hola,
+
+Confirmamos nuestra asistencia al bautizo de Edgar Yael.
+
+Familia: ${familia}
+Número de ${textoInvitados}: ${invitados}
+
+Nos vemos el 17 de octubre.`;
+
+
+        const telefono =
+            "527291767841";
+
+
+        const urlWhatsApp =
+            "https://wa.me/"
+            +
+            telefono
+            +
+            "?text="
+            +
+            encodeURIComponent(
+                mensaje
+            );
+
+
+        window.open(
+            urlWhatsApp,
+            "_blank",
+            "noopener,noreferrer"
+        );
+
+
+    }
+);
+
+
+campoFamilia.addEventListener(
+    "input",
+    limpiarError
+);
+
+
+campoInvitados.addEventListener(
+    "input",
+    limpiarError
+);
+
+
+/* =====================================================
+   ANIMACIONES SCROLL
+===================================================== */
+
+const elementos =
+    document.querySelectorAll(
+        ".revelar, .izquierda, .derecha"
+    );
+
+
+const observador =
+    new IntersectionObserver(
+
+        entradas => {
+
+
+            entradas.forEach(
+                entrada => {
+
+
+                    if (
+                        entrada.isIntersecting
+                    ) {
+
+
+                        entrada.target
+                            .classList
+                            .add(
+                                "visible"
+                            );
+
+
+                        observador
+                            .unobserve(
+                                entrada.target
+                            );
+
+
+                    }
+
+
+                }
+            );
+
+
+        },
+
+        {
+            threshold: 0.12
+        }
+
+    );
+
+
+elementos.forEach(
+    elemento => {
+
+
+        observador.observe(
+            elemento
+        );
+
+
+    }
+);
+
+
+</script>
+
+
+</body>
+
+</html>
