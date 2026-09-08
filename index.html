@@ -2,12 +2,8 @@
 <html lang="es">
 
 <head>
-
 <meta charset="UTF-8">
-
-<meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Bautizo de Edgar Yael</title>
 
@@ -70,12 +66,11 @@ section {
 
 
 /* =====================================================
-   PANTALLA DEL SOBRE
+   PANTALLA INICIAL
 ===================================================== */
 
 .pantalla-sobre {
     position: fixed;
-
     inset: 0;
 
     width: 100%;
@@ -95,13 +90,13 @@ section {
         radial-gradient(
             circle at 50% 40%,
             #ffffff 0%,
-            #f5fbff 42%,
+            #f6fbff 45%,
             #dcefff 100%
         );
 
     transition:
-        opacity 0.8s ease,
-        visibility 0.8s ease;
+        opacity 0.9s ease,
+        visibility 0.9s ease;
 }
 
 .pantalla-sobre.oculta {
@@ -112,7 +107,7 @@ section {
 
 
 /* =====================================================
-   DECORACIÓN DEL SOBRE
+   ESQUINAS PANTALLA SOBRE
 ===================================================== */
 
 .sobre-esquina {
@@ -152,13 +147,13 @@ section {
     z-index: 4;
 
     width: 100%;
-    max-width: 850px;
+    max-width: 900px;
 
     text-align: center;
 }
 
 .apertura-mini {
-    margin-bottom: 15px;
+    margin-bottom: 14px;
 
     color: var(--azul);
 
@@ -169,7 +164,7 @@ section {
 }
 
 .apertura-titulo {
-    margin-bottom: 30px;
+    margin-bottom: 28px;
 
     font-family:
         Georgia,
@@ -178,412 +173,89 @@ section {
 
     font-size:
         clamp(
-            40px,
+            42px,
             6vw,
-            70px
+            72px
         );
 
     font-weight: 400;
 
-    color: var(--azul-oscuro);
+    line-height: 1;
+
+    color:
+        var(--azul-oscuro);
 }
 
 
 /* =====================================================
-   SOBRE
+   IMAGEN DEL SOBRE
 ===================================================== */
 
 .sobre-wrapper {
-    position: relative;
-
     width:
         min(
-            620px,
+            650px,
             92vw
         );
 
-    height:
-        min(
-            410px,
-            61vw
-        );
-
-    min-height: 300px;
-    max-height: 410px;
-
-    margin: 0 auto 25px;
-
-    perspective: 1400px;
-}
-
-.sobre {
-    position: absolute;
-
-    inset: 0;
-
-    width: 100%;
-    height: 100%;
-
-    filter:
-        drop-shadow(
-            0 28px 35px
-            rgba(36, 76, 108, 0.20)
-        );
-}
-
-
-/* =====================================================
-   SOBRE ATRÁS
-===================================================== */
-
-.sobre-atras {
-    position: absolute;
-
-    inset: 0;
-
-    border-radius:
-        12px 12px 18px 18px;
-
-    background:
-        linear-gradient(
-            145deg,
-            #d9efff,
-            #f8fcff
-        );
-
-    border:
-        2px solid
-        rgba(91, 155, 209, 0.25);
-
-    overflow: hidden;
-
-    z-index: 1;
-}
-
-
-/* =====================================================
-   TARJETA INTERIOR
-===================================================== */
-
-.tarjeta-sobre {
-    position: absolute;
-
-    left: 8%;
-    bottom: 7%;
-
-    width: 84%;
-    height: 82%;
-
-    z-index: 2;
+    margin:
+        0 auto
+        24px;
 
     display: flex;
-    flex-direction: column;
-
     justify-content: center;
     align-items: center;
 
-    padding: 25px;
+    position: relative;
+}
 
-    border-radius: 15px;
+.sobre-imagen {
+    width: 100%;
+    height: auto;
 
-    background:
-        linear-gradient(
-            180deg,
-            #ffffff,
-            #f7fcff
+    filter:
+        drop-shadow(
+            0 26px 35px
+            rgba(36,76,108,0.20)
         );
 
-    border:
-        1px solid
-        rgba(91,155,209,0.22);
-
-    transform:
-        translateY(14%);
-
     transition:
-        transform 1.1s
+        transform 1.05s
         cubic-bezier(
             0.22,
             0.8,
             0.25,
             1
-        );
-
-    box-shadow:
-        0 12px 28px
-        rgba(36, 76, 108, 0.08);
-}
-
-.tarjeta-adorno {
-    width:
-        min(
-            260px,
-            60%
-        );
-
-    margin-bottom: 12px;
-}
-
-.tarjeta-mini {
-    color: var(--azul);
-
-    font-size: 10px;
-    font-weight: 700;
-
-    letter-spacing: 5px;
-
-    margin-bottom: 10px;
-}
-
-.tarjeta-sobre h2 {
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
-    font-size:
-        clamp(
-            31px,
-            5vw,
-            50px
-        );
-
-    line-height: 1;
-
-    font-weight: 400;
-
-    color: var(--azul-oscuro);
-
-    margin-bottom: 13px;
-}
-
-.tarjeta-fecha {
-    color: var(--azul-oscuro);
-
-    font-size: 11px;
-
-    letter-spacing: 4px;
+        ),
+        opacity 0.85s ease;
 }
 
 
 /* =====================================================
-   TAPA DEL SOBRE
-===================================================== */
-
-.sobre-tapa {
-    position: absolute;
-
-    left: 0;
-    top: 0;
-
-    width: 100%;
-    height: 55%;
-
-    z-index: 5;
-
-    transform-origin: center top;
-
-    transform:
-        rotateX(0deg);
-
-    transition:
-        transform 0.9s
-        cubic-bezier(
-            0.65,
-            0,
-            0.35,
-            1
-        );
-
-    clip-path:
-        polygon(
-            0 0,
-            100% 0,
-            50% 100%
-        );
-
-    background:
-        linear-gradient(
-            160deg,
-            #e9f6ff,
-            #cce9ff
-        );
-
-    border-top:
-        2px solid
-        rgba(91,155,209,0.22);
-
-    backface-visibility: hidden;
-}
-
-
-/* =====================================================
-   FRENTE DEL SOBRE
-===================================================== */
-
-.sobre-frente-izq {
-    position: absolute;
-
-    left: 0;
-    bottom: 0;
-
-    width: 55%;
-    height: 72%;
-
-    z-index: 4;
-
-    clip-path:
-        polygon(
-            0 0,
-            100% 65%,
-            100% 100%,
-            0 100%
-        );
-
-    background:
-        linear-gradient(
-            135deg,
-            #eef9ff,
-            #cdeaff
-        );
-}
-
-.sobre-frente-der {
-    position: absolute;
-
-    right: 0;
-    bottom: 0;
-
-    width: 55%;
-    height: 72%;
-
-    z-index: 4;
-
-    clip-path:
-        polygon(
-            100% 0,
-            0 65%,
-            0 100%,
-            100% 100%
-        );
-
-    background:
-        linear-gradient(
-            225deg,
-            #eef9ff,
-            #cdeaff
-        );
-}
-
-.sobre-frente-abajo {
-    position: absolute;
-
-    left: 0;
-    bottom: 0;
-
-    width: 100%;
-    height: 52%;
-
-    z-index: 4;
-
-    clip-path:
-        polygon(
-            0 100%,
-            50% 0,
-            100% 100%
-        );
-
-    background:
-        linear-gradient(
-            180deg,
-            #eef9ff,
-            #d5edff
-        );
-}
-
-
-/* =====================================================
-   SELLO PARA TI
-===================================================== */
-
-.sello {
-    position: absolute;
-
-    left: 50%;
-    top: 47%;
-
-    transform:
-        translate(-50%, -50%);
-
-    z-index: 8;
-
-    width: 92px;
-    height: 92px;
-
-    display: flex;
-
-    justify-content: center;
-    align-items: center;
-
-    border-radius: 50%;
-
-    background:
-        var(--azul-oscuro);
-
-    color: #ffffff;
-
-    border:
-        6px solid
-        rgba(255,255,255,0.88);
-
-    box-shadow:
-        0 8px 20px
-        rgba(36,76,108,0.22);
-
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
-    font-size: 19px;
-
-    font-style: italic;
-
-    line-height: 1.05;
-
-    text-align: center;
-
-    transition:
-        opacity 0.35s ease,
-        transform 0.5s ease;
-}
-
-
-/* =====================================================
-   SOBRE ABIERTO
+   ANIMACIÓN AL ABRIR
 ===================================================== */
 
 .pantalla-sobre.abriendo
-.sobre-tapa {
+.sobre-imagen {
     transform:
-        rotateX(-180deg);
+        translateY(-25px)
+        scale(1.08);
 
-    z-index: 0;
+    opacity: 0;
 }
 
 .pantalla-sobre.abriendo
-.tarjeta-sobre {
-    transform:
-        translateY(-42%);
-}
-
+.apertura-titulo,
 .pantalla-sobre.abriendo
-.sello {
+.apertura-mini,
+.pantalla-sobre.abriendo
+.boton-abrir,
+.pantalla-sobre.abriendo
+.apertura-nota {
     opacity: 0;
 
     transform:
-        translate(-50%, -50%)
-        scale(0.6);
+        translateY(-10px);
 }
 
 
@@ -592,10 +264,11 @@ section {
 ===================================================== */
 
 .boton-abrir {
-    min-width: 230px;
+    min-width: 235px;
 
     padding:
-        17px 30px;
+        17px
+        32px;
 
     border: 0;
 
@@ -620,7 +293,8 @@ section {
 
     transition:
         transform 0.3s ease,
-        background 0.3s ease;
+        background 0.3s ease,
+        opacity 0.5s ease;
 }
 
 .boton-abrir:hover {
@@ -637,6 +311,9 @@ section {
     font-size: 12px;
 
     opacity: 0.6;
+
+    transition:
+        opacity 0.5s ease;
 }
 
 
@@ -689,7 +366,6 @@ section {
     z-index: 5;
 
     pointer-events: none;
-
     user-select: none;
 }
 
@@ -703,7 +379,7 @@ section {
 
 
 /* =====================================================
-   DECORACIÓN FONDO PORTADA
+   FONDO PORTADA
 ===================================================== */
 
 .portada::before {
@@ -789,16 +465,17 @@ section {
 .portada-mini {
     font-size:
         clamp(
-            20px,
-            1.65vw,
-            25px
+            21px,
+            1.7vw,
+            26px
         );
 
     font-weight: 700;
 
     letter-spacing: 5px;
 
-    color: var(--azul);
+    color:
+        var(--azul);
 
     margin-bottom: 22px;
 }
@@ -841,7 +518,8 @@ section {
 
     font-style: italic;
 
-    color: var(--azul);
+    color:
+        var(--azul);
 
     margin-bottom: 25px;
 }
@@ -976,14 +654,14 @@ section {
 
     text-align: center;
 
-    background: #ffffff;
+    background:
+        #ffffff;
 
     overflow: hidden;
 }
 
 .intro-contenido {
     width: 100%;
-
     max-width: 900px;
 
     position: relative;
@@ -1010,7 +688,8 @@ section {
 
     letter-spacing: 6px;
 
-    color: var(--azul);
+    color:
+        var(--azul);
 
     margin-bottom: 25px;
 }
@@ -1299,7 +978,8 @@ section {
         7%
         90px;
 
-    background: #ffffff;
+    background:
+        #ffffff;
 
     overflow: hidden;
 }
@@ -1379,6 +1059,7 @@ section {
     overflow: hidden;
 
     display: flex;
+
     flex-direction: column;
 
     box-shadow:
@@ -1432,7 +1113,8 @@ section {
 
     letter-spacing: 5px;
 
-    color: var(--azul);
+    color:
+        var(--azul);
 
     margin-bottom: 18px;
 }
@@ -1463,7 +1145,8 @@ section {
 .evento-hora {
     font-size: 23px;
 
-    color: var(--azul);
+    color:
+        var(--azul);
 
     margin-bottom: 12px;
 }
@@ -1505,7 +1188,8 @@ section {
 }
 
 .boton:hover {
-    color: #ffffff;
+    color:
+        #ffffff;
 
     background:
         var(--azul-oscuro);
@@ -1534,7 +1218,8 @@ section {
 
     text-align: center;
 
-    color: #ffffff;
+    color:
+        #ffffff;
 
     overflow: hidden;
 
@@ -1570,7 +1255,8 @@ section {
 }
 
 .padrinos .mini {
-    color: #ffffff;
+    color:
+        #ffffff;
 
     opacity: 0.8;
 }
@@ -1634,7 +1320,12 @@ section {
         35px;
 
     background:
-        rgba(255,255,255,0.4);
+        rgba(
+            255,
+            255,
+            255,
+            0.4
+        );
 }
 
 .padrinos-mensaje {
@@ -1660,7 +1351,8 @@ section {
         7%
         95px;
 
-    background: #f5fbff;
+    background:
+        #f5fbff;
 }
 
 .galeria-grid {
@@ -1936,7 +1628,8 @@ section {
 
     border-radius: 60px;
 
-    color: #ffffff;
+    color:
+        #ffffff;
 
     background:
         var(--azul-oscuro);
@@ -1980,7 +1673,8 @@ section {
         25px
         85px;
 
-    color: #ffffff;
+    color:
+        #ffffff;
 
     overflow: hidden;
 
@@ -2003,7 +1697,8 @@ section {
 }
 
 .cierre .mini {
-    color: #ffffff;
+    color:
+        #ffffff;
 }
 
 .cierre h2 {
@@ -2076,13 +1771,6 @@ section {
     opacity: 0;
 
     pointer-events: none;
-
-    transition:
-        opacity 0.5s ease;
-}
-
-.musica-aviso.visible {
-    opacity: 1;
 }
 
 .boton-musica {
@@ -2103,7 +1791,8 @@ section {
 
     border-radius: 50%;
 
-    color: #ffffff;
+    color:
+        #ffffff;
 
     background:
         var(--azul-oscuro);
@@ -2241,7 +1930,6 @@ and
 @media
 (max-width:800px) {
 
-
     /* SOBRE */
 
     .pantalla-sobre {
@@ -2271,6 +1959,8 @@ and
     .apertura-titulo {
         font-size: 40px;
 
+        line-height: 1.05;
+
         margin-bottom: 20px;
     }
 
@@ -2281,37 +1971,7 @@ and
                 94vw
             );
 
-        height: 300px;
-
-        min-height: 0;
-    }
-
-    .tarjeta-sobre {
-        padding: 18px;
-    }
-
-    .tarjeta-adorno {
-        width: 180px;
-
-        margin-bottom: 8px;
-    }
-
-    .tarjeta-sobre h2 {
-        font-size: 32px;
-    }
-
-    .sello {
-        width: 76px;
-
-        height: 76px;
-
-        font-size: 16px;
-    }
-
-    .pantalla-sobre.abriendo
-    .tarjeta-sobre {
-        transform:
-            translateY(-36%);
+        margin-bottom: 22px;
     }
 
 
@@ -2435,6 +2095,7 @@ and
         height: 86%;
 
         left: 50%;
+
         top: 56%;
 
         transform:
@@ -2520,7 +2181,8 @@ and
     }
 
     .momento-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns:
+            1fr;
 
         gap: 50px;
     }
@@ -2567,7 +2229,8 @@ and
     }
 
     .eventos {
-        grid-template-columns: 1fr;
+        grid-template-columns:
+            1fr;
     }
 
     .evento {
@@ -2659,7 +2322,7 @@ and
     }
 
 
-    /* CONFIRMACION */
+    /* CONFIRMACIÓN */
 
     .confirmacion {
         min-height: auto;
@@ -2728,7 +2391,11 @@ and
     }
 
     .sobre-wrapper {
-        height: 275px;
+        width: 96vw;
+    }
+
+    .boton-abrir {
+        min-width: 220px;
     }
 
     .portada {
@@ -2791,7 +2458,7 @@ and
 
 
 <!-- =====================================================
-     SOBRE
+     PANTALLA INICIAL
 ===================================================== -->
 
 <div
@@ -2827,62 +2494,10 @@ and
         <div class="sobre-wrapper">
 
 
-            <div class="sobre">
-
-
-                <div class="sobre-atras">
-                </div>
-
-
-                <div class="tarjeta-sobre">
-
-
-                    <img
-                        class="tarjeta-adorno"
-                        src="imagenes/decoracion/guirnalda-cielito-lindo.png"
-                        alt="">
-
-
-                    <p class="tarjeta-mini">
-                        MI BAUTIZO
-                    </p>
-
-
-                    <h2>
-                        Edgar Yael
-                    </h2>
-
-
-                    <p class="tarjeta-fecha">
-                        17 · OCTUBRE · 2026
-                    </p>
-
-
-                </div>
-
-
-                <div class="sobre-tapa">
-                </div>
-
-
-                <div class="sobre-frente-izq">
-                </div>
-
-
-                <div class="sobre-frente-der">
-                </div>
-
-
-                <div class="sobre-frente-abajo">
-                </div>
-
-
-                <div class="sello">
-                    Para ti
-                </div>
-
-
-            </div>
+            <img
+                class="sobre-imagen"
+                src="imagenes/decoracion/sobre-invitacion.png"
+                alt="Invitación para el bautizo de Edgar Yael">
 
 
         </div>
@@ -3326,7 +2941,7 @@ and
 
 
                     <p class="evento-hora">
-                        10:00 a. m.
+                        11:00 a. m.
                     </p>
 
 
@@ -3762,22 +3377,10 @@ const botonMusica =
     );
 
 
-const avisoMusica =
-    document.getElementById(
-        "avisoMusica"
-    );
-
-
 musica.volume = 0.4;
 
 
 let musicaActiva = false;
-
-
-/*
-   La primera vez debe iniciar
-   en el segundo 18.
-*/
 
 let primeraReproduccion = true;
 
@@ -3826,12 +3429,6 @@ abrirInvitacion.addEventListener(
             );
 
 
-        /*
-           INICIAMOS EN EL SEGUNDO 18
-           SOLAMENTE LA PRIMERA VEZ.
-        */
-
-
         try {
 
 
@@ -3877,29 +3474,7 @@ abrirInvitacion.addEventListener(
                 "♪";
 
 
-            botonMusica
-                .classList
-                .remove(
-                    "activo"
-                );
-
-
-            botonMusica
-                .setAttribute(
-                    "aria-label",
-                    "Reproducir música"
-                );
-
-
         }
-
-
-        /*
-           Dejamos que se vea
-           la animación del sobre
-           antes de mostrar
-           la invitación.
-        */
 
 
         setTimeout(
@@ -3928,7 +3503,7 @@ abrirInvitacion.addEventListener(
 
             },
 
-            1550
+            1100
         );
 
 
@@ -3949,16 +3524,6 @@ botonMusica.addEventListener(
 
 
             try {
-
-
-                /*
-                   Si por alguna razón
-                   la música no arrancó
-                   al abrir el sobre,
-                   este primer PLAY
-                   también iniciará
-                   desde el segundo 18.
-                */
 
 
                 if (
@@ -3989,13 +3554,6 @@ botonMusica.addEventListener(
                     .classList
                     .add(
                         "activo"
-                    );
-
-
-                botonMusica
-                    .setAttribute(
-                        "aria-label",
-                        "Pausar música"
                     );
 
 
@@ -4035,13 +3593,6 @@ botonMusica.addEventListener(
                 );
 
 
-            botonMusica
-                .setAttribute(
-                    "aria-label",
-                    "Reproducir música"
-                );
-
-
         }
 
 
@@ -4050,12 +3601,12 @@ botonMusica.addEventListener(
 
 
 /* =====================================================
-   CUENTA REGRESIVA
+   CONTADOR
 ===================================================== */
 
 const fechaBautizo =
     new Date(
-        "2026-10-17T10:00:00"
+        "2026-10-17T11:00:00"
     );
 
 
@@ -4073,32 +3624,19 @@ function actualizarContador() {
     if (diferencia <= 0) {
 
 
-        document
-            .getElementById("dias")
-            .textContent =
+        document.getElementById("dias").textContent =
             "00";
 
-
-        document
-            .getElementById("horas")
-            .textContent =
+        document.getElementById("horas").textContent =
             "00";
 
-
-        document
-            .getElementById("minutos")
-            .textContent =
+        document.getElementById("minutos").textContent =
             "00";
 
-
-        document
-            .getElementById("segundos")
-            .textContent =
+        document.getElementById("segundos").textContent =
             "00";
-
 
         return;
-
 
     }
 
@@ -4141,40 +3679,28 @@ function actualizarContador() {
         .getElementById("dias")
         .textContent =
         String(dias)
-            .padStart(
-                2,
-                "0"
-            );
+        .padStart(2, "0");
 
 
     document
         .getElementById("horas")
         .textContent =
         String(horas)
-            .padStart(
-                2,
-                "0"
-            );
+        .padStart(2, "0");
 
 
     document
         .getElementById("minutos")
         .textContent =
         String(minutos)
-            .padStart(
-                2,
-                "0"
-            );
+        .padStart(2, "0");
 
 
     document
         .getElementById("segundos")
         .textContent =
         String(segundos)
-            .padStart(
-                2,
-                "0"
-            );
+        .padStart(2, "0");
 
 
 }
@@ -4222,9 +3748,7 @@ function mostrarError(
     campo
 ) {
 
-
-    errorConfirmacion
-        .textContent =
+    errorConfirmacion.textContent =
         mensaje;
 
 
@@ -4241,15 +3765,12 @@ function mostrarError(
 
     }
 
-
 }
 
 
 function limpiarError() {
 
-
-    errorConfirmacion
-        .textContent =
+    errorConfirmacion.textContent =
         "";
 
 
@@ -4258,7 +3779,6 @@ function limpiarError() {
         .remove(
             "visible"
         );
-
 
 }
 
@@ -4276,14 +3796,14 @@ formulario.addEventListener(
 
         const familia =
             campoFamilia
-                .value
-                .trim();
+            .value
+            .trim();
 
 
         const valorInvitados =
             campoInvitados
-                .value
-                .trim();
+            .value
+            .trim();
 
 
         const invitados =
@@ -4294,45 +3814,36 @@ formulario.addEventListener(
 
         if (!familia) {
 
-
             mostrarError(
                 "Por favor escribe el nombre de la familia. Ejemplo: Familia Segura Correa.",
                 campoFamilia
             );
 
-
             return;
-
 
         }
 
 
         if (familia.length < 3) {
 
-
             mostrarError(
                 "Por favor escribe el nombre completo de la familia.",
                 campoFamilia
             );
 
-
             return;
-
 
         }
 
 
         if (!valorInvitados) {
 
-
             mostrarError(
                 "Por favor indica cuántas personas asistirán.",
                 campoInvitados
             );
 
-
             return;
-
 
         }
 
@@ -4343,30 +3854,24 @@ formulario.addEventListener(
             invitados < 1
         ) {
 
-
             mostrarError(
                 "El número de invitados debe ser un número entero mayor a cero.",
                 campoInvitados
             );
 
-
             return;
-
 
         }
 
 
         if (invitados > 20) {
 
-
             mostrarError(
                 "Por favor revisa el número de invitados ingresado.",
                 campoInvitados
             );
 
-
             return;
-
 
         }
 
@@ -4486,11 +3991,9 @@ const observador =
 elementos.forEach(
     elemento => {
 
-
         observador.observe(
             elemento
         );
-
 
     }
 );
