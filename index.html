@@ -2,6 +2,7 @@
 <html lang="es">
 
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -457,12 +458,22 @@ section {
 
     position: relative;
 
-    z-index: 6;
+    z-index: 8;
 
     padding-top: 55px;
 }
 
+
+/* =====================================================
+   MI BAUTIZO
+   AJUSTADO PARA QUE NO LO TAPE EL ADORNO
+===================================================== */
+
 .portada-mini {
+    position: relative;
+
+    z-index: 20;
+
     font-size:
         clamp(
             21px,
@@ -478,7 +489,10 @@ section {
         var(--azul);
 
     margin-bottom: 22px;
+
+    margin-left: 70px;
 }
+
 
 .portada h1 {
     font-family:
@@ -1742,37 +1756,6 @@ section {
    MÚSICA
 ===================================================== */
 
-.musica-aviso {
-    position: fixed;
-
-    right: 22px;
-    bottom: 95px;
-
-    max-width: 220px;
-
-    padding:
-        13px
-        17px;
-
-    border-radius: 15px;
-
-    background:
-        rgba(255,255,255,0.96);
-
-    color:
-        var(--azul-oscuro);
-
-    font-size: 12px;
-
-    text-align: center;
-
-    z-index: 9998;
-
-    opacity: 0;
-
-    pointer-events: none;
-}
-
 .boton-musica {
     position: fixed;
 
@@ -1914,9 +1897,7 @@ and
 
     .foto-edgar {
         width: 345px;
-
         height: 495px;
-
         top: 56%;
     }
 
@@ -1952,7 +1933,6 @@ and
 
     .apertura-mini {
         font-size: 10px;
-
         letter-spacing: 4px;
     }
 
@@ -1995,6 +1975,8 @@ and
         width: 180px;
 
         top: -5px;
+
+        z-index: 4;
     }
 
     .esquina-portada-izquierda {
@@ -2019,7 +2001,12 @@ and
         text-align: center;
 
         padding-top: 20px;
+
+        z-index: 9;
     }
+
+
+    /* MI BAUTIZO EN CELULAR */
 
     .portada-mini {
         font-size: 17px;
@@ -2027,7 +2014,14 @@ and
         letter-spacing: 4px;
 
         margin-bottom: 18px;
+
+        margin-left: 25px;
+
+        position: relative;
+
+        z-index: 20;
     }
+
 
     .portada h1 {
         font-size:
@@ -2095,7 +2089,6 @@ and
         height: 86%;
 
         left: 50%;
-
         top: 56%;
 
         transform:
@@ -2408,6 +2401,8 @@ and
 
     .portada-mini {
         font-size: 16px;
+
+        margin-left: 28px;
     }
 
     .marco-foto {
@@ -2493,12 +2488,10 @@ and
 
         <div class="sobre-wrapper">
 
-
             <img
                 class="sobre-imagen"
                 src="imagenes/decoracion/sobre-invitacion.png"
                 alt="Invitación para el bautizo de Edgar Yael">
-
 
         </div>
 
@@ -2534,15 +2527,6 @@ and
     src="musica/que-bonito-amor.mp3"
     preload="auto">
 </audio>
-
-
-<div
-    id="avisoMusica"
-    class="musica-aviso">
-
-    Música
-
-</div>
 
 
 <button
@@ -2735,52 +2719,36 @@ and
 
             <div class="contador-item">
 
-                <span id="dias">
-                    00
-                </span>
+                <span id="dias">00</span>
 
-                <small>
-                    DÍAS
-                </small>
+                <small>DÍAS</small>
 
             </div>
 
 
             <div class="contador-item">
 
-                <span id="horas">
-                    00
-                </span>
+                <span id="horas">00</span>
 
-                <small>
-                    HORAS
-                </small>
+                <small>HORAS</small>
 
             </div>
 
 
             <div class="contador-item">
 
-                <span id="minutos">
-                    00
-                </span>
+                <span id="minutos">00</span>
 
-                <small>
-                    MIN
-                </small>
+                <small>MIN</small>
 
             </div>
 
 
             <div class="contador-item">
 
-                <span id="segundos">
-                    00
-                </span>
+                <span id="segundos">00</span>
 
-                <small>
-                    SEG
-                </small>
+                <small>SEG</small>
 
             </div>
 
@@ -2807,12 +2775,10 @@ and
 
         <div class="momento-foto izquierda">
 
-
             <img
                 class="foto"
                 src="imagenes/galeria1.jpg"
                 alt="Edgar Yael">
-
 
         </div>
 
@@ -2912,11 +2878,9 @@ and
 
             <div class="evento-foto">
 
-
                 <img
                     src="imagenes/iglesia.jpg"
                     alt="Parroquia Santa Clara de Asís">
-
 
             </div>
 
@@ -2925,7 +2889,6 @@ and
 
 
                 <div>
-
 
                     <p class="evento-tipo">
                         CEREMONIA RELIGIOSA
@@ -2952,7 +2915,6 @@ and
 
                     </p>
 
-
                 </div>
 
 
@@ -2978,11 +2940,9 @@ and
 
             <div class="evento-foto">
 
-
                 <img
                     src="imagenes/finca.jpg"
                     alt="Finca Don Miguel">
-
 
             </div>
 
@@ -2991,7 +2951,6 @@ and
 
 
                 <div>
-
 
                     <p class="evento-tipo">
                         CELEBRACIÓN
@@ -3014,7 +2973,6 @@ and
                         celebrando juntos.
 
                     </p>
-
 
                 </div>
 
@@ -3134,7 +3092,7 @@ and
         <div class="foto-galeria galeria-1 izquierda">
 
             <img
-                src="imagenes/galeria1.jpg"
+                src="imagenes/galeria6.jpg"
                 alt="Edgar Yael">
 
         </div>
@@ -3366,15 +3324,10 @@ and
 ===================================================== */
 
 const musica =
-    document.getElementById(
-        "musica"
-    );
-
+    document.getElementById("musica");
 
 const botonMusica =
-    document.getElementById(
-        "botonMusica"
-    );
+    document.getElementById("botonMusica");
 
 
 musica.volume = 0.4;
@@ -3386,19 +3339,14 @@ let primeraReproduccion = true;
 
 
 /* =====================================================
-   SOBRE
+   ABRIR INVITACIÓN
 ===================================================== */
 
 const pantallaSobre =
-    document.getElementById(
-        "pantallaSobre"
-    );
-
+    document.getElementById("pantallaSobre");
 
 const abrirInvitacion =
-    document.getElementById(
-        "abrirInvitacion"
-    );
+    document.getElementById("abrirInvitacion");
 
 
 let sobreAbierto = false;
@@ -3410,9 +3358,7 @@ abrirInvitacion.addEventListener(
 
 
         if (sobreAbierto) {
-
             return;
-
         }
 
 
@@ -3424,9 +3370,7 @@ abrirInvitacion.addEventListener(
 
         pantallaSobre
             .classList
-            .add(
-                "abriendo"
-            );
+            .add("abriendo");
 
 
         try {
@@ -3440,7 +3384,6 @@ abrirInvitacion.addEventListener(
 
             primeraReproduccion = false;
 
-
             musicaActiva = true;
 
 
@@ -3450,16 +3393,7 @@ abrirInvitacion.addEventListener(
 
             botonMusica
                 .classList
-                .add(
-                    "activo"
-                );
-
-
-            botonMusica
-                .setAttribute(
-                    "aria-label",
-                    "Pausar música"
-                );
+                .add("activo");
 
 
         }
@@ -3483,16 +3417,12 @@ abrirInvitacion.addEventListener(
 
                 pantallaSobre
                     .classList
-                    .add(
-                        "oculta"
-                    );
+                    .add("oculta");
 
 
                 document.body
                     .classList
-                    .remove(
-                        "sobre-activo"
-                    );
+                    .remove("sobre-activo");
 
 
                 window.scrollTo(
@@ -3542,7 +3472,6 @@ botonMusica.addEventListener(
 
                 primeraReproduccion = false;
 
-
                 musicaActiva = true;
 
 
@@ -3552,9 +3481,7 @@ botonMusica.addEventListener(
 
                 botonMusica
                     .classList
-                    .add(
-                        "activo"
-                    );
+                    .add("activo");
 
 
             }
@@ -3588,9 +3515,7 @@ botonMusica.addEventListener(
 
             botonMusica
                 .classList
-                .remove(
-                    "activo"
-                );
+                .remove("activo");
 
 
         }
@@ -3624,17 +3549,25 @@ function actualizarContador() {
     if (diferencia <= 0) {
 
 
-        document.getElementById("dias").textContent =
-            "00";
+        document
+            .getElementById("dias")
+            .textContent = "00";
 
-        document.getElementById("horas").textContent =
-            "00";
 
-        document.getElementById("minutos").textContent =
-            "00";
+        document
+            .getElementById("horas")
+            .textContent = "00";
 
-        document.getElementById("segundos").textContent =
-            "00";
+
+        document
+            .getElementById("minutos")
+            .textContent = "00";
+
+
+        document
+            .getElementById("segundos")
+            .textContent = "00";
+
 
         return;
 
@@ -3748,15 +3681,15 @@ function mostrarError(
     campo
 ) {
 
-    errorConfirmacion.textContent =
+
+    errorConfirmacion
+        .textContent =
         mensaje;
 
 
     errorConfirmacion
         .classList
-        .add(
-            "visible"
-        );
+        .add("visible");
 
 
     if (campo) {
@@ -3765,20 +3698,22 @@ function mostrarError(
 
     }
 
+
 }
 
 
 function limpiarError() {
 
-    errorConfirmacion.textContent =
+
+    errorConfirmacion
+        .textContent =
         "";
 
 
     errorConfirmacion
         .classList
-        .remove(
-            "visible"
-        );
+        .remove("visible");
+
 
 }
 
@@ -3796,14 +3731,14 @@ formulario.addEventListener(
 
         const familia =
             campoFamilia
-            .value
-            .trim();
+                .value
+                .trim();
 
 
         const valorInvitados =
             campoInvitados
-            .value
-            .trim();
+                .value
+                .trim();
 
 
         const invitados =
@@ -3814,10 +3749,12 @@ formulario.addEventListener(
 
         if (!familia) {
 
+
             mostrarError(
                 "Por favor escribe el nombre de la familia. Ejemplo: Familia Segura Correa.",
                 campoFamilia
             );
+
 
             return;
 
@@ -3826,10 +3763,12 @@ formulario.addEventListener(
 
         if (familia.length < 3) {
 
+
             mostrarError(
                 "Por favor escribe el nombre completo de la familia.",
                 campoFamilia
             );
+
 
             return;
 
@@ -3838,10 +3777,12 @@ formulario.addEventListener(
 
         if (!valorInvitados) {
 
+
             mostrarError(
                 "Por favor indica cuántas personas asistirán.",
                 campoInvitados
             );
+
 
             return;
 
@@ -3854,10 +3795,12 @@ formulario.addEventListener(
             invitados < 1
         ) {
 
+
             mostrarError(
                 "El número de invitados debe ser un número entero mayor a cero.",
                 campoInvitados
             );
+
 
             return;
 
@@ -3866,10 +3809,12 @@ formulario.addEventListener(
 
         if (invitados > 20) {
 
+
             mostrarError(
                 "Por favor revisa el número de invitados ingresado.",
                 campoInvitados
             );
+
 
             return;
 
@@ -3961,9 +3906,7 @@ const observador =
 
                         entrada.target
                             .classList
-                            .add(
-                                "visible"
-                            );
+                            .add("visible");
 
 
                         observador
