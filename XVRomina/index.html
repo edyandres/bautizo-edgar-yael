@@ -80,21 +80,42 @@
     .music-control{position:fixed;right:20px;bottom:20px;z-index:5;border:1px solid #dfd6bd;border-radius:50%;height:54px;width:54px;background:#f7f5ed;color:var(--dark);font-size:1.35rem;box-shadow:0 5px 20px #22332233}.music-control[hidden]{display:none}
     @media(max-width:750px){.portrait-frame{height:480px;max-width:350px}.portrait-frame:before{inset:-20px}.envelope-wrap{max-width:90vw}.hero-date{font-size:.9rem}.hero-art{background-size:auto 100%}}
   </style>
+  <style>
+    /* Mint, ivory and gold illustration replaces Romina's portrait. */
+    .intro{background-color:#f7f6ee}
+    .envelope-wrap{width:min(560px,94vw);background:rgba(250,249,242,.94);border:1px solid #c7b482;box-shadow:0 24px 70px #30433226;padding:clamp(28px,5vw,52px) clamp(18px,5vw,52px)}
+    .envelope-wrap:before{content:'';position:absolute;inset:9px;border:1px solid #dfd3b0;pointer-events:none}
+    .intro h1{margin:14px 0 18px;font-size:clamp(3.8rem,12vw,6.8rem)}
+    .envelope{display:block;width:min(420px,80vw);height:auto;aspect-ratio:3/2;margin:0 auto 26px;background:none;border:0;box-shadow:none;object-fit:contain;filter:drop-shadow(0 16px 15px #4a49352c)}
+    .envelope:before,.envelope:after{content:none}
+    .hero-art{background:#faf8ef;position:relative;overflow:hidden;min-height:700px}
+    .hero-art:before,.hero-art:after{content:none}
+    .hero-art img{width:100%;height:100%;position:absolute;inset:0;object-fit:cover;object-position:center 65%}
+    .illustration-title{display:none}
+    @media(max-width:750px){
+      .hero-art{order:-1;min-height:100svh}
+      .hero-art img{object-position:center top}
+      .illustration-title{display:block;position:absolute;top:16%;left:7%;right:7%;z-index:1;text-align:center;color:#37533f;text-shadow:0 2px 15px #fffdf8;font:500 clamp(2.4rem,10vw,4.3rem)/.95 'Cormorant Garamond',serif}
+      .illustration-title em{display:block;margin-top:.13em;font-size:1.45em;font-weight:400}
+      .hero-copy{min-height:600px}
+      .envelope-wrap{max-width:94vw}
+      .envelope{width:min(360px,77vw)}
+    }
+  </style>
 </head>
 <body>
   <div class="intro" id="intro" role="dialog" aria-label="Abrir invitación">
-    <div class="envelope-wrap"><div class="eyebrow">Una invitación para ti</div><h1>Mis XV<br><em>Romina</em></h1><div class="envelope" aria-hidden="true"></div><button class="button" id="open">Abrir invitación</button><small>7 de noviembre de 2026</small></div>
+    <div class="envelope-wrap"><div class="eyebrow">Una invitación para ti</div><h1>Mis XV<br><em>Romina</em></h1><img class="envelope" src="assets/sobre-elegante.webp" alt="" aria-hidden="true"><button class="button" id="open">Abrir invitación</button><small>7 de noviembre de 2026</small></div>
   </div>
   <main>
-    <section class="hero"><div class="hero-copy"><div class="hero-inner"><div class="eyebrow">Con mucha ilusión</div><h1><span>Mis XV</span>Romina</h1><div class="gold-line"></div><p>Quiero compartir contigo un día muy especial.</p><div class="hero-date">SÁBADO · 7 DE NOVIEMBRE · 2026</div><a class="button secondary" href="#celebracion">Descubre mi invitación ↓</a></div></div><div class="hero-art"><div class="arch"><span>XV</span></div></div></section>
+    <section class="hero"><div class="hero-copy"><div class="hero-inner"><div class="eyebrow">Con mucha ilusión</div><h1><span>Mis XV</span>Romina</h1><div class="gold-line"></div><p>Quiero compartir contigo un día muy especial.</p><div class="hero-date">SÁBADO · 7 DE NOVIEMBRE · 2026</div><a class="button secondary" href="#celebracion">Descubre mi invitación ↓</a></div></div><div class="hero-art"><img src="assets/quince-verde.webp" alt="Ilustración de una quinceañera vista de espaldas con vestido verde y flores" fetchpriority="high"><div class="illustration-title" aria-hidden="true">Mis XV<em>Romina</em></div></div></section>
     <section class="section quote reveal" id="celebracion"><div class="eyebrow">Una nueva etapa</div><h2>Un día para recordar</h2><div class="gold-line"></div><p>Hay momentos que se vuelven más bonitos cuando los compartimos con las personas que queremos. Me hará muy feliz celebrar mis quince años contigo.</p></section>
     <section class="section reveal"><div class="eyebrow">La espera casi termina</div><h2>Cuenta regresiva</h2><div class="countdown" id="countdown" aria-label="Tiempo restante"><div><strong id="days">—</strong><span>Días</span></div><div><strong id="hours">—</strong><span>Horas</span></div><div><strong id="minutes">—</strong><span>Minutos</span></div><div><strong id="seconds">—</strong><span>Segundos</span></div></div></section>
-    <section class="portrait-section"><div class="portrait-frame reveal"><img src="assets/romina-editada.jpg" alt="Romina" loading="lazy"></div><div class="copy reveal"><div class="eyebrow">Mis quince años</div><h2>Romina</h2><div class="gold-line"></div><p>Un día lleno de ilusión se acerca. Tu compañía hará que esta celebración sea todavía más especial.</p></div></section>
     <section class="section family reveal"><div class="eyebrow">Con mucho cariño</div><h2>Mi familia</h2><div class="families"><div><div class="eyebrow">Mis papás</div><div class="names">Heidy Correa Ríos<br><span>&amp;</span><br>Rodolfo Hernández</div></div><div><div class="eyebrow">Mis padrinos</div><div class="names">Alexis Juárez Garay<br><span>&amp;</span><br>Diego Armando Correa Ríos</div></div></div></section>
     <section class="section locations reveal"><div class="eyebrow">Te esperamos</div><h2>¿Dónde y cuándo?</h2><div class="cards"><article class="card"><img class="card-photo church" src="assets/iglesia.jpg" alt="Interior de la Parroquia del Perpetuo Socorro" loading="lazy"><div class="card-content"><div class="eyebrow">Ceremonia religiosa</div><h3>Parroquia del Perpetuo Socorro</h3><div class="time">4:00 p. m.</div><p>Sábado 7 de noviembre de 2026</p><a class="map-link" href="https://maps.app.goo.gl/EUuidxFGTxo86mA46?g_st=ic" target="_blank" rel="noopener noreferrer">Ver ubicación ↗</a></div></article><article class="card"><img class="card-photo" src="assets/salon.jpg" alt="Fachada del Salón Hacienda la Antigua" loading="lazy"><div class="card-content"><div class="eyebrow">Recepción</div><h3>Salón Hacienda la Antigua</h3><div class="time">Después de la ceremonia</div><p>Ven a celebrar este día conmigo.</p><a class="map-link" href="https://maps.app.goo.gl/ghwtLugbPLtpiAuA7?g_st=ic" target="_blank" rel="noopener noreferrer">Ver ubicación ↗</a></div></article></div></section>
     <section class="section rsvp reveal"><div class="eyebrow">Nos vemos pronto</div><h2>Confirma tu asistencia</h2><p>Escribe el nombre de tu familia y cuántas personas nos acompañarán.</p><form class="rsvp-card" id="rsvp-form"><label for="family-name">Nombre de la familia</label><input id="family-name" name="family" type="text" placeholder="Ej. Familia Vilchis Carbajal" autocomplete="name" required maxlength="90"><label for="guest-count">Número de invitados</label><input id="guest-count" name="guests" type="number" min="1" max="99" inputmode="numeric" value="1" required><button class="button" type="submit">Confirmar por WhatsApp ↗</button><p class="rsvp-note">Se abrirá WhatsApp con tu mensaje listo para enviar.</p></form></section>
     <section class="section closing reveal"><div class="eyebrow">7 · Noviembre · 2026</div><h2>Te espero en mis XV</h2><p>Será muy bonito tenerte conmigo en este día.</p><div class="gold-line"></div><div class="names">Romina</div></section>
-  </main><footer class="footer">Mis XV · Romina · 2026</footer><audio id="music" src="assets/musica-romina.mp3" preload="auto" loop></audio><button id="music-control" class="music-control" aria-label="Pausar música" title="Pausar música" hidden>♫</button>
+  </main><footer class="footer">Mis XV · Romina · 2026</footer><audio id="music" src="assets/musica-romina-nueva.mp3" preload="auto" loop></audio><button id="music-control" class="music-control" aria-label="Pausar música" title="Pausar música" hidden>♫</button>
   <script>
     const intro=document.getElementById('intro');const musicButton=document.getElementById('music-control');const music=document.getElementById('music');music.volume=.55;
     async function startMusic(){try{await music.play();musicButton.hidden=false;musicButton.setAttribute('aria-label','Pausar música');musicButton.title='Pausar música';musicButton.textContent='♫'}catch(e){musicButton.hidden=false;musicButton.setAttribute('aria-label','Reproducir música');musicButton.title='Reproducir música';musicButton.textContent='♪'}}
