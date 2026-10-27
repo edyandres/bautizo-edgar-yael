@@ -1,35 +1,15 @@
 (() => {
  'use strict';
- const models = JSON.parse(document.getElementById('model-data').textContent);
- const dialog = document.getElementById('preview-dialog');
- const frame = dialog.querySelector('iframe');
- const name = document.getElementById('preview-name');
- const link = document.getElementById('preview-link');
- const closeButton = dialog.querySelector('[data-close-preview]');
- let trigger = null;
- document.querySelectorAll('[data-preview]').forEach(button => button.addEventListener('click', () => {
-  const model = models.find(item => item.id === button.dataset.preview);
-  if (!model) return;
-  trigger = button;
-  name.textContent = model.name;
-  frame.title = `Vista previa de ${model.name}`;
-  frame.src = model.src;
-  link.href = model.src;
-  dialog.showModal();
-  document.body.classList.add('preview-open');
-  closeButton.focus();
- }));
- function closePreview() { dialog.close(); }
- closeButton.addEventListener('click', closePreview);
- dialog.addEventListener('click', event => { if(event.target === dialog) closePreview(); });
- dialog.addEventListener('close', () => {
-  frame.src = 'about:blank';
-  document.body.classList.remove('preview-open');
-  if (trigger) trigger.focus({preventScroll:true});
- });
  const cards = Array.from(document.querySelectorAll('[data-category]'));
  const filters = document.querySelectorAll('[data-filter]');
+ const categoryTitles = {todos:'Amor a <em>primer vistazo.</em>',boda:'Invitaciones de <em>boda.</em>',xv:'Invitaciones de <em>XV años.</em>',cumpleanos:'Invitaciones de <em>cumpleaños.</em>',bautizo:'Invitaciones de <em>bautizo.</em>'};
+ function scrollToDesigns() {
+  const filtersTop = document.querySelector('.filters').getBoundingClientRect().top + window.scrollY;
+  const headerHeight = document.querySelector('.site-header').offsetHeight;
+  window.scrollTo({top:filtersTop-headerHeight-18,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});
+ }
  function filterModels(category) {
+  document.getElementById('colecciones-title').innerHTML = categoryTitles[category] || categoryTitles.todos;
   let count = 0;
   cards.forEach(card => {
    const show = category === 'todos' || card.dataset.category === category;
@@ -39,10 +19,10 @@
   filters.forEach(button => button.setAttribute('aria-pressed',String(button.dataset.filter === category)));
   document.querySelector('.filter-status').textContent = `${count} ${count===1?'diseño para explorar':'diseños para explorar'}`;
  }
- filters.forEach(button => button.addEventListener('click', () => filterModels(button.dataset.filter)));
+ filters.forEach(button => button.addEventListener('click', () => { filterModels(button.dataset.filter); scrollToDesigns(); }));
  document.querySelectorAll('[data-occasion]').forEach(button => button.addEventListener('click', () => {
   filterModels(button.dataset.occasion);
-  document.getElementById('colecciones').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});
+  scrollToDesigns();
  }));
  const menuButton = document.querySelector('.menu-toggle');
  const menu = document.getElementById('mobile-nav');
