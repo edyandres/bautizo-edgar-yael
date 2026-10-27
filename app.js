@@ -12,7 +12,7 @@
   if (!model) return;
   trigger = button;
   name.textContent = model.name;
-  frame.title = `Invitación ${model.name} en iPhone`;
+  frame.title = `Vista previa de ${model.name}`;
   frame.src = model.src;
   link.href = model.src;
   dialog.showModal();
