@@ -6,7 +6,7 @@
  function scrollToDesigns() {
   const filtersTop = document.querySelector('.filters').getBoundingClientRect().top + window.scrollY;
   const headerHeight = document.querySelector('.site-header').offsetHeight;
-  window.scrollTo({top:filtersTop-headerHeight-18,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});
+  window.scrollTo({top:filtersTop-headerHeight-18,behavior:'instant'});
  }
  function filterModels(category) {
   document.getElementById('colecciones-title').innerHTML = categoryTitles[category] || categoryTitles.todos;
