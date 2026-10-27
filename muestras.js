@@ -17,15 +17,41 @@
     opened = true;
     openingButtons.forEach(item => item.disabled = true);
     opener.classList.add('opening');
+    const burst = document.createElement('div'); burst.className = 'opening-particles'; burst.setAttribute('aria-hidden','true');
+    for (let i = 0; i < 30; i++) {
+      const petal = document.createElement('i');
+      const angle = (i / 30) * Math.PI * 2;
+      petal.style.setProperty('--x', `${Math.cos(angle) * (100 + i * 6)}px`);
+      petal.style.setProperty('--y', `${Math.sin(angle) * 230 - 100}px`);
+      petal.style.setProperty('--spin', `${i * 53}deg`);
+      burst.appendChild(petal);
+    }
+    opener.appendChild(burst);
     if (audio) audio.play().then(syncMusic).catch(syncMusic);
     setTimeout(() => {
-      opener.hidden = true; main.hidden = false;
+      opener.hidden = true; main.hidden = false; document.body.classList.add('opened'); burst.remove();
       $('[data-controls]').hidden = false;
-      window.scrollTo(0, 0);
+      window.scrollTo({top:0,behavior:'instant'});
       const heading = main.querySelector('h1');
       heading.setAttribute('tabindex', '-1'); heading.focus({preventScroll: true});
-    }, matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 1000);
+    }, matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 3100);
   }));
+  const replayButton = $('[data-replay]');
+  if (replayButton) replayButton.addEventListener('click', () => {
+    opened = false; main.hidden = true; opener.hidden = false; opener.classList.remove('opening');
+    document.body.classList.remove('opened'); $('[data-controls]').hidden = true;
+    openingButtons.forEach(button => button.disabled = false);
+    if (audio) { audio.pause(); audio.currentTime = 0; }
+    window.scrollTo({top:0,behavior:'instant'}); openingButtons[0].focus({preventScroll:true});
+  });
+  if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const observer = new IntersectionObserver(entries => entries.forEach(entry => {
+      if (entry.isIntersecting) { entry.target.classList.add('in-view'); observer.unobserve(entry.target); }
+    }), {threshold:.08});
+    document.querySelectorAll('.art-card, .story-grid, .events, .gallery').forEach(el => {
+      el.classList.add('will-reveal'); observer.observe(el);
+    });
+  }
   if (musicButton && audio) {
     musicButton.addEventListener('click', () => {
       if (audio.paused) audio.play().then(syncMusic).catch(syncMusic); else audio.pause();
